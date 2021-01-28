@@ -1,0 +1,2488 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ancestry &#8212; Msprime manual</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Demography" href="demography.html" />
+    <link rel="prev" title="Running simulations" href="simulations.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Msprime manual</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Getting started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="quickstart.html">
+   Quickstart
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="installation.html">
+   Installation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Using msprime
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="simulations.html">
+   Running simulations
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Ancestry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="demography.html">
+     Demography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mutations.html">
+     Mutations
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="utilities.html">
+   Utilities
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="likelihoods.html">
+     Computing likelihoods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rate_maps.html">
+     Rate Maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cli.html">
+     Command line interface
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="logging.html">
+     Logging
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="api.html">
+   API Reference
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="development.html">
+   Developer documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="legacy.html">
+   Legacy (version 0.x) APIs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="changelog.html">
+   Changelog
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CITATION.html">
+   Citing msprime
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial.html">
+   PORTING IN PROGRESS: Tutorial
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Manual for msprime __MSPRIME_VERSION__
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/ancestry.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ancestry.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tskit-dev/msprime"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/tskit-dev/msprime/issues/new?title=Issue%20on%20page%20%2Fancestry.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/tskit-dev/msprime/edit/main/docs/ancestry.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/tskit-dev/msprime/main?urlpath=tree/docs/ancestry.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quick-reference">
+   Quick reference
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specifying-samples">
+   Specifying samples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#populations">
+     Populations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sampling-time">
+     Sampling time
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-details">
+     Sample details
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-sampling">
+     Advanced sampling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ploidy">
+   Ploidy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#population-size">
+   Population size
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#genome-properties">
+   Genome properties
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#genome-length">
+     Genome length
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discrete-or-continuous">
+     Discrete or continuous?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recombination">
+     Recombination
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gene-conversion">
+     Gene conversion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-chromosomes">
+     Multiple chromosomes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#controlling-randomness">
+   Controlling randomness
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-seeds">
+     Random seeds
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-replicate-simulations">
+     Running replicate simulations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recording-more-information">
+   Recording more information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ancestral-recombination-graph">
+     Ancestral recombination graph
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#migration-events">
+     Migration events
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#census-events">
+     Census events
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulating-simulation-time">
+   Manipulating simulation time
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stopping-simulations-early">
+     Stopping simulations early
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-the-start-time">
+     Setting the start time
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specifying-the-initial-state">
+   Specifying the initial state
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#input-requirements">
+     Input requirements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#models">
+   Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hudson-coalescent">
+     Hudson coalescent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#smc-approximations">
+     SMC approximations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discrete-time-wright-fisher">
+     Discrete Time Wright-Fisher
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-merger-coalescents">
+     Multiple merger coalescents
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selective-sweeps">
+     Selective sweeps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-models">
+     Multiple models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes-for-ms-users">
+   Notes for ms users
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ancestry">
+<span id="sec-ancestry"></span><h1>Ancestry<a class="headerlink" href="#ancestry" title="Permalink to this headline">¶</a></h1>
+<p>Msprime simulates the ancestry of sampled genomes under a number of
+different backwards-in-time population genetic
+<a class="reference internal" href="#sec-ancestry-models"><span class="std std-ref">models</span></a>. The simulated ancestry is
+represented as a <a class="reference external" href="https://tskit.dev">succinct tree sequence</a> using
+the <a class="reference external" href="https://tskit.dev/tskit">tskit</a> library, which provides an
+extensive suite of operations for analysing genealogical trees
+and DNA sequence data. See the <a class="reference external" href="https://tskit.dev/tutorials/getting_started.html#sec-tskit-getting-started" title="(in Python)"><span>Getting started with tskit</span></a>
+tutorial for more information on how to process data using tskit.</p>
+<p>Here we run a simple simulation and show a summary of the resulting
+tree sequence:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div>
+  <style>
+    .tskit-table thead tr th {text-align: left;}
+    .tskit-table tbody tr td:first-of-type {text-align: left;}
+    .tskit-details-label {vertical-align: top; padding-right:5px;}
+    .tskit-table-set {display: inline-flex;flex-wrap: wrap;margin: -12px 0 0 -12px;width: calc(100% + 12px);}
+    .tskit-table-set-table {margin: 12px 0 0 12px;}
+    details {display: inline-block;}
+    summary {cursor: pointer; outline: 0; display: list-item;}
+  </style>
+  <div class="tskit-table-set">
+    <div class="tskit-table-set-table">
+      <table class="tskit-table">
+        <thead>
+          <tr>
+            <th style="padding:0;line-height:21px;">
+              <img style="height: 32px;display: inline-block;padding: 3px 5px 3px 0;"src="https://raw.githubusercontent.com/tskit-dev/administrative/main/tskit_logo.svg"/>
+              <a target="_blank" href="https://tskit.readthedocs.io/en/latest/python-api.html#the-treesequence-class"> Tree Sequence
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Trees</td><td>1</td></tr>
+          <tr><td>Sequence Length</td><td>1.0</td></tr>
+          <tr><td>Sample Nodes</td><td>4</td></tr>
+          <tr><td>Total Size</td><td>1.6 KiB</td></tr>
+          <tr>
+            <td>Metadata</td><td style="text-align: left;">No Metadata</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tskit-table-set-table">
+      <table class="tskit-table">
+        <thead>
+          <tr>
+            <th style="line-height:21px;">Table</th>
+            <th>Rows</th>
+            <th>Size</th>
+            <th>Has Metadata</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td>Edges</td>
+          <td>6</td>
+          <td>172 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Individuals</td>
+          <td>2</td>
+          <td>32 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Migrations</td>
+          <td>0</td>
+          <td>4 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Mutations</td>
+          <td>0</td>
+          <td>8 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Nodes</td>
+          <td>7</td>
+          <td>172 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Populations</td>
+          <td>1</td>
+          <td>218 Bytes</td>
+          <td style="text-align: center;">
+            ✅
+          </td>
+        </tr>
+
+      <tr>
+        <td>Provenances</td>
+          <td>1</td>
+          <td>966 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Sites</td>
+          <td>0</td>
+          <td>8 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+<p>The <a class="reference internal" href="api.html#msprime.sim_ancestry" title="msprime.sim_ancestry"><code class="xref py py-func docutils literal notranslate"><span class="pre">sim_ancestry()</span></code></a> function has many parameters to specify
+the details of the simulations. The <a class="reference internal" href="api.html#msprime.sim_ancestry" title="msprime.sim_ancestry"><code class="xref py py-func docutils literal notranslate"><span class="pre">API</span> <span class="pre">documentation</span></code></a>
+contains a precise description of the parameter; the sections
+in this page provide some explanation and examples of how to use these
+parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s important to note that <a class="reference internal" href="api.html#msprime.sim_ancestry" title="msprime.sim_ancestry"><code class="xref py py-func docutils literal notranslate"><span class="pre">sim_ancestry()</span></code></a> only simulates
+the ancestral trees for samples: if we want actual sequence data
+then we need to additionally simulate mutations on these trees.
+See the <a class="reference internal" href="mutations.html#sec-mutations"><span class="std std-ref">Mutations</span></a> section for more information on how to do
+this.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="quick-reference">
+<h2>Quick reference<a class="headerlink" href="#quick-reference" title="Permalink to this headline">¶</a></h2>
+<dl class="simple myst">
+<dt><a class="reference internal" href="api.html#msprime.sim_ancestry" title="msprime.sim_ancestry"><code class="xref py py-func docutils literal notranslate"><span class="pre">sim_ancestry()</span></code></a></dt><dd><p>Simulate ancestral tree sequence topology</p>
+</dd>
+</dl>
+<p><strong>Models</strong></p>
+<dl class="simple myst">
+<dt><a class="reference internal" href="api.html#msprime.StandardCoalescent" title="msprime.StandardCoalescent"><code class="xref py py-class docutils literal notranslate"><span class="pre">StandardCoalescent</span></code></a></dt><dd><p>Coalescent with recombination (“hudson”)</p>
+</dd>
+<dt><a class="reference internal" href="api.html#msprime.SmcApproxCoalescent" title="msprime.SmcApproxCoalescent"><code class="xref py py-class docutils literal notranslate"><span class="pre">SmcApproxCoalescent</span></code></a></dt><dd><p>Sequentially Markov Coalescent (“smc”)</p>
+</dd>
+<dt><a class="reference internal" href="api.html#msprime.SmcPrimeApproxCoalescent" title="msprime.SmcPrimeApproxCoalescent"><code class="xref py py-class docutils literal notranslate"><span class="pre">SmcPrimeApproxCoalescent</span></code></a></dt><dd><p>SMC’(“smc_prime”)</p>
+</dd>
+<dt><a class="reference internal" href="api.html#msprime.DiscreteTimeWrightFisher" title="msprime.DiscreteTimeWrightFisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiscreteTimeWrightFisher</span></code></a></dt><dd><p>Generation-by-generation Wright-Fisher</p>
+</dd>
+<dt><a class="reference internal" href="api.html#msprime.BetaCoalescent" title="msprime.BetaCoalescent"><code class="xref py py-class docutils literal notranslate"><span class="pre">BetaCoalescent</span></code></a></dt><dd><p>Beta coalescent multiple-merger</p>
+</dd>
+<dt><a class="reference internal" href="api.html#msprime.DiracCoalescent" title="msprime.DiracCoalescent"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiracCoalescent</span></code></a></dt><dd><p>Dirac coalescent multiple-merger</p>
+</dd>
+<dt><a class="reference internal" href="api.html#msprime.SweepGenicSelection" title="msprime.SweepGenicSelection"><code class="xref py py-class docutils literal notranslate"><span class="pre">SweepGenicSelection</span></code></a></dt><dd><p>Selective sweep at a linked locus</p>
+</dd>
+</dl>
+<hr class="docutils" />
+</div>
+<div class="section" id="specifying-samples">
+<span id="sec-ancestry-samples"></span><h2>Specifying samples<a class="headerlink" href="#specifying-samples" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">samples</span></code> argument to <a class="reference internal" href="api.html#msprime.sim_ancestry" title="msprime.sim_ancestry"><code class="xref py py-func docutils literal notranslate"><span class="pre">sim_ancestry()</span></code></a> defines the number
+of sample individuals we simulate the history of. There are three different
+forms; the <code class="docutils literal notranslate"><span class="pre">samples</span></code> argument can be:</p>
+<ul class="simple">
+<li><p>an <strong>integer</strong>, interpreted as the number of samples to draw in a single
+population model;</p></li>
+<li><p>a <strong>dictionary</strong> mapping population references (either integer IDs or
+names) to the number of samples for that population;</p></li>
+<li><p>a list of <a class="reference internal" href="api.html#msprime.SampleSet" title="msprime.SampleSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">SampleSet</span></code></a> objects, which provide more flexibility
+in how groups of similar samples are drawn from populations.</p></li>
+</ul>
+<p>In the simplest case provide a single integer which defines the number
+of samples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div>
+  <style>
+    .tskit-table thead tr th {text-align: left;}
+    .tskit-table tbody tr td:first-of-type {text-align: left;}
+    .tskit-details-label {vertical-align: top; padding-right:5px;}
+    .tskit-table-set {display: inline-flex;flex-wrap: wrap;margin: -12px 0 0 -12px;width: calc(100% + 12px);}
+    .tskit-table-set-table {margin: 12px 0 0 12px;}
+    details {display: inline-block;}
+    summary {cursor: pointer; outline: 0; display: list-item;}
+  </style>
+  <div class="tskit-table-set">
+    <div class="tskit-table-set-table">
+      <table class="tskit-table">
+        <thead>
+          <tr>
+            <th style="padding:0;line-height:21px;">
+              <img style="height: 32px;display: inline-block;padding: 3px 5px 3px 0;"src="https://raw.githubusercontent.com/tskit-dev/administrative/main/tskit_logo.svg"/>
+              <a target="_blank" href="https://tskit.readthedocs.io/en/latest/python-api.html#the-treesequence-class"> Tree Sequence
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Trees</td><td>1</td></tr>
+          <tr><td>Sequence Length</td><td>1.0</td></tr>
+          <tr><td>Sample Nodes</td><td>4</td></tr>
+          <tr><td>Total Size</td><td>1.6 KiB</td></tr>
+          <tr>
+            <td>Metadata</td><td style="text-align: left;">No Metadata</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tskit-table-set-table">
+      <table class="tskit-table">
+        <thead>
+          <tr>
+            <th style="line-height:21px;">Table</th>
+            <th>Rows</th>
+            <th>Size</th>
+            <th>Has Metadata</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td>Edges</td>
+          <td>6</td>
+          <td>172 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Individuals</td>
+          <td>2</td>
+          <td>32 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Migrations</td>
+          <td>0</td>
+          <td>4 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Mutations</td>
+          <td>0</td>
+          <td>8 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Nodes</td>
+          <td>7</td>
+          <td>172 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Populations</td>
+          <td>1</td>
+          <td>218 Bytes</td>
+          <td style="text-align: center;">
+            ✅
+          </td>
+        </tr>
+
+      <tr>
+        <td>Provenances</td>
+          <td>1</td>
+          <td>966 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Sites</td>
+          <td>0</td>
+          <td>8 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is important to note that the number of samples
+refers to the number of <em>individuals</em> not the number of <em>nodes</em>
+(monoploid genomes). See the <a class="reference internal" href="#sec-ancestry-ploidy"><span class="std std-ref">Ploidy</span></a>
+section for details.</p>
+</div>
+<div class="section" id="populations">
+<h3>Populations<a class="headerlink" href="#populations" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Some text here that refers to the demography section.</p>
+</div>
+<p>The next example illustrates one usage of the dictionary form of the <code class="docutils literal notranslate"><span class="pre">samples</span></code>
+argument. We first create a <a class="reference internal" href="api.html#msprime.Demography" title="msprime.Demography"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demography</span></code></a> object representing
+a 10 deme linear stepping stone model. Then, we run the simulation
+with 1 diploid sample each drawn from the first and last demes in this
+linear habitat.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">demography</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">Demography</span><span class="o">.</span><span class="n">stepping_stone_model</span><span class="p">(</span>
+    <span class="p">[</span><span class="mi">100</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span><span class="p">,</span>
+    <span class="n">migration_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">boundaries</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">demography</span><span class="o">=</span><span class="n">demography</span><span class="p">)</span>
+<span class="n">ts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div>
+  <style>
+    .tskit-table thead tr th {text-align: left;}
+    .tskit-table tbody tr td:first-of-type {text-align: left;}
+    .tskit-details-label {vertical-align: top; padding-right:5px;}
+    .tskit-table-set {display: inline-flex;flex-wrap: wrap;margin: -12px 0 0 -12px;width: calc(100% + 12px);}
+    .tskit-table-set-table {margin: 12px 0 0 12px;}
+    details {display: inline-block;}
+    summary {cursor: pointer; outline: 0; display: list-item;}
+  </style>
+  <div class="tskit-table-set">
+    <div class="tskit-table-set-table">
+      <table class="tskit-table">
+        <thead>
+          <tr>
+            <th style="padding:0;line-height:21px;">
+              <img style="height: 32px;display: inline-block;padding: 3px 5px 3px 0;"src="https://raw.githubusercontent.com/tskit-dev/administrative/main/tskit_logo.svg"/>
+              <a target="_blank" href="https://tskit.readthedocs.io/en/latest/python-api.html#the-treesequence-class"> Tree Sequence
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Trees</td><td>1</td></tr>
+          <tr><td>Sequence Length</td><td>1.0</td></tr>
+          <tr><td>Sample Nodes</td><td>4</td></tr>
+          <tr><td>Total Size</td><td>3.8 KiB</td></tr>
+          <tr>
+            <td>Metadata</td><td style="text-align: left;">No Metadata</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tskit-table-set-table">
+      <table class="tskit-table">
+        <thead>
+          <tr>
+            <th style="line-height:21px;">Table</th>
+            <th>Rows</th>
+            <th>Size</th>
+            <th>Has Metadata</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td>Edges</td>
+          <td>6</td>
+          <td>172 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Individuals</td>
+          <td>2</td>
+          <td>32 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Migrations</td>
+          <td>0</td>
+          <td>4 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Mutations</td>
+          <td>0</td>
+          <td>8 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Nodes</td>
+          <td>7</td>
+          <td>172 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Populations</td>
+          <td>10</td>
+          <td>569 Bytes</td>
+          <td style="text-align: center;">
+            ✅
+          </td>
+        </tr>
+
+      <tr>
+        <td>Provenances</td>
+          <td>1</td>
+          <td>2.8 KiB</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Sites</td>
+          <td>0</td>
+          <td>8 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+<p>The keys in the dictionary can also be the string names of the
+population, which is useful when we are simulating from empirically
+estimated models. For example, here create a <a class="reference internal" href="api.html#msprime.Demography" title="msprime.Demography"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demography</span></code></a> object
+based on a species tree, and then draw samples using the species names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demography</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">Demography</span><span class="o">.</span><span class="n">from_species_tree</span><span class="p">(</span>
+    <span class="s2">&quot;(((human:5.6,chimpanzee:5.6):3.0,gorilla:8.6):9.4,orangutan:18.0)&quot;</span><span class="p">,</span>
+    <span class="n">branch_length_units</span><span class="o">=</span><span class="s2">&quot;myr&quot;</span><span class="p">,</span>
+    <span class="n">initial_size</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">generation_time</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">({</span><span class="s2">&quot;gorilla&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;human&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="n">demography</span><span class="o">=</span><span class="n">demography</span><span class="p">)</span>
+<span class="n">ts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div>
+  <style>
+    .tskit-table thead tr th {text-align: left;}
+    .tskit-table tbody tr td:first-of-type {text-align: left;}
+    .tskit-details-label {vertical-align: top; padding-right:5px;}
+    .tskit-table-set {display: inline-flex;flex-wrap: wrap;margin: -12px 0 0 -12px;width: calc(100% + 12px);}
+    .tskit-table-set-table {margin: 12px 0 0 12px;}
+    details {display: inline-block;}
+    summary {cursor: pointer; outline: 0; display: list-item;}
+  </style>
+  <div class="tskit-table-set">
+    <div class="tskit-table-set-table">
+      <table class="tskit-table">
+        <thead>
+          <tr>
+            <th style="padding:0;line-height:21px;">
+              <img style="height: 32px;display: inline-block;padding: 3px 5px 3px 0;"src="https://raw.githubusercontent.com/tskit-dev/administrative/main/tskit_logo.svg"/>
+              <a target="_blank" href="https://tskit.readthedocs.io/en/latest/python-api.html#the-treesequence-class"> Tree Sequence
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Trees</td><td>1</td></tr>
+          <tr><td>Sequence Length</td><td>1.0</td></tr>
+          <tr><td>Sample Nodes</td><td>12</td></tr>
+          <tr><td>Total Size</td><td>4.6 KiB</td></tr>
+          <tr>
+            <td>Metadata</td><td style="text-align: left;">No Metadata</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tskit-table-set-table">
+      <table class="tskit-table">
+        <thead>
+          <tr>
+            <th style="line-height:21px;">Table</th>
+            <th>Rows</th>
+            <th>Size</th>
+            <th>Has Metadata</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td>Edges</td>
+          <td>22</td>
+          <td>620 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Individuals</td>
+          <td>6</td>
+          <td>80 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Migrations</td>
+          <td>0</td>
+          <td>4 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Mutations</td>
+          <td>0</td>
+          <td>8 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Nodes</td>
+          <td>23</td>
+          <td>556 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Populations</td>
+          <td>7</td>
+          <td>463 Bytes</td>
+          <td style="text-align: center;">
+            ✅
+          </td>
+        </tr>
+
+      <tr>
+        <td>Provenances</td>
+          <td>1</td>
+          <td>2.7 KiB</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+      <tr>
+        <td>Sites</td>
+          <td>0</td>
+          <td>8 Bytes</td>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="section" id="sampling-time">
+<span id="sec-ancestry-samples-sampling-time"></span><h3>Sampling time<a class="headerlink" href="#sampling-time" title="Permalink to this headline">¶</a></h3>
+<p>By default the samples that we draw from a <a class="reference internal" href="api.html#msprime.Population" title="msprime.Population"><code class="xref py py-class docutils literal notranslate"><span class="pre">Population</span></code></a> are the
+population’s <code class="docutils literal notranslate"><span class="pre">sampling_time</span></code>. This is usually zero, representing the
+present, but in some demographic models representing (for example)
+with populations representing archaic individuals the default sampling
+time might be older. We can manually control the time at which samples
+are drawn using list of <a class="reference internal" href="api.html#msprime.SampleSet" title="msprime.SampleSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">SampleSet</span></code></a> objects form for the
+samples argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">samples</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">msprime</span><span class="o">.</span><span class="n">SampleSet</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">msprime</span><span class="o">.</span><span class="n">SampleSet</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+    <span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id	flags	population	individual	time	metadata
+0	1	0	0	0.00000000000000	
+1	1	0	0	0.00000000000000	
+2	1	0	1	1.00000000000000	
+3	1	0	1	1.00000000000000	
+4	0	0	-1	2.11186040107299	
+5	0	0	-1	2.91495069495087	
+6	0	0	-1	4.95490738178649	
+</pre></div>
+</div>
+<img alt="_images/ancestry_12_1.svg" src="_images/ancestry_12_1.svg" /></div>
+</div>
+<p>In this example we create two diploid sample individuals, one at the present time
+and one taken 5 generations in the past, representing one modern
+and one ancient diploid individual. Running this example, we get:</p>
+<p>Because nodes <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> were sampled at time 0, their times in the
+node table are both 0; likewise, nodes <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code> are at time 1.0.</p>
+</div>
+<div class="section" id="sample-details">
+<h3>Sample details<a class="headerlink" href="#sample-details" title="Permalink to this headline">¶</a></h3>
+<p>Sample individuals and nodes are allocated sequentially in the order that
+they are specified. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demography</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">Demography</span><span class="o">.</span><span class="n">island_model</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">migration_rate</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">msprime</span><span class="o">.</span><span class="n">SampleSet</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">population</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">msprime</span><span class="o">.</span><span class="n">SampleSet</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">population</span><span class="o">=</span><span class="mi">0</span><span class="p">)],</span>
+    <span class="n">demography</span><span class="o">=</span><span class="n">demography</span><span class="p">,</span>
+    <span class="n">end_time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">individuals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id	flags	location	metadata
+0	0		
+1	0		
+2	0		
+id	flags	population	individual	time	metadata
+0	1	1	0	0.00000000000000	
+1	1	1	0	0.00000000000000	
+2	1	0	1	0.00000000000000	
+3	1	0	1	0.00000000000000	
+4	1	0	2	0.00000000000000	
+5	1	0	2	0.00000000000000	
+</pre></div>
+</div>
+</div>
+</div>
+<p>(Because we’re only interested in the sampled nodes and individuals we
+stopped the simulation from actually doing anything by setting
+<code class="docutils literal notranslate"><span class="pre">end_time=0</span></code>.) Here we define three sample individuals,
+and we therefore have three rows in the individual table.
+Because these are diploid individuals, the node table contains
+six sample nodes. If we look at the <code class="docutils literal notranslate"><span class="pre">individual</span></code> column in the
+node table we can see that the first two nodes correspond to individual
+<code class="docutils literal notranslate"><span class="pre">0</span></code>, the next two nodes individual <code class="docutils literal notranslate"><span class="pre">1</span></code>, etc. The sample configuration
+stated that the first sample should come from population <code class="docutils literal notranslate"><span class="pre">1</span></code> and
+the other two from population <code class="docutils literal notranslate"><span class="pre">0</span></code>, and we can see this reflected
+in the <code class="docutils literal notranslate"><span class="pre">population</span></code> column of the node table. (Somewhat confusingly,
+population values are associated with nodes rather than individuals;
+this is mostly for historical reasons.)</p>
+<p>The <a class="reference internal" href="api.html#msprime.SampleSet" title="msprime.SampleSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">SampleSet</span></code></a> class has a number of attributes which default
+to <code class="docutils literal notranslate"><span class="pre">None</span></code>. If these are set they will <strong>override</strong> the values
+which might be specified elsewhere. For example, we can specify
+mixed ploidy samples via the <code class="docutils literal notranslate"><span class="pre">ploidy</span></code> attribute of <a class="reference internal" href="api.html#msprime.SampleSet" title="msprime.SampleSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">SampleSet</span></code></a>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">msprime</span><span class="o">.</span><span class="n">SampleSet</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+        <span class="n">msprime</span><span class="o">.</span><span class="n">SampleSet</span><span class="p">(</span><span class="mi">2</span><span class="p">)],</span>
+    <span class="n">ploidy</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">end_time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">individuals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id	flags	location	metadata
+0	0		
+1	0		
+2	0		
+id	flags	population	individual	time	metadata
+0	1	0	0	0.00000000000000	
+1	1	0	0	0.00000000000000	
+2	1	0	0	0.00000000000000	
+3	1	0	1	0.00000000000000	
+4	1	0	2	0.00000000000000	
+</pre></div>
+</div>
+</div>
+</div>
+<p>(Again, we stop the simulation immediately because we’re only interested
+in the initial samples.) Here we have three sampled individuals again
+but in this they are mixed ploidy: the first individual is triploid
+and the other two are haploid.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is vital to note that setting the <code class="docutils literal notranslate"><span class="pre">ploidy</span></code> value
+of <a class="reference internal" href="api.html#msprime.SampleSet" title="msprime.SampleSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">SampleSet</span></code></a> objects only affects sampling and does
+not affect the actual simulation. In this case, the simulation
+will be run on the haploid time scale. Some models may not
+support mixing of ploidy at all.</p>
+</div>
+<p>If you wish to set up the node and individual IDs in some other way,
+the <a class="reference internal" href="#sec-ancestry-samples-advanced-sampling"><span class="std std-ref">Advanced sampling</span></a> section shows how
+to fully control how sample individuals and nodes are defined. However,
+this level of control should not be needed for the vast majority of
+applications.</p>
+</div>
+<div class="section" id="advanced-sampling">
+<span id="sec-ancestry-samples-advanced-sampling"></span><h3>Advanced sampling<a class="headerlink" href="#advanced-sampling" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>This section should describe how to define samples directly in
+terms of the <code class="docutils literal notranslate"><span class="pre">initial_state</span></code> tables and give an example of how to
+use it.</p>
+</div>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="ploidy">
+<span id="sec-ancestry-ploidy"></span><h2>Ploidy<a class="headerlink" href="#ploidy" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>This section is pretty much superseded by the previous discussion
+and we don’t actually discuss the important point about timescales
+anywhere. We need to have a top-level section about this somewhere.</p>
+</div>
+<p>The samples argument for <a class="reference internal" href="api.html#msprime.sim_ancestry" title="msprime.sim_ancestry"><code class="xref py py-func docutils literal notranslate"><span class="pre">sim_ancestry()</span></code></a> is flexible, and allows us
+to provide samples in a number of different forms. In single-population
+models we can use the numeric form, which gives us <span class="math notranslate nohighlight">\(n\)</span> samples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_18_0.svg" src="_images/ancestry_18_0.svg" /></div>
+</div>
+<p>It’s important to note that the number of samples refers to the number
+of <span class="math notranslate nohighlight">\(k\)</span>-ploid <em>individuals</em>, not the number of sample nodes
+in the trees. The <code class="docutils literal notranslate"><span class="pre">ploidy</span></code> argument determines the number of sample
+nodes per individual, and is <code class="docutils literal notranslate"><span class="pre">2</span></code> by default; hence, when we asked
+for 3 sample individuals in the example above, we got a tree with
+six sample <em>nodes</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_20_0.svg" src="_images/ancestry_20_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="population-size">
+<span id="sec-ancestry-population-size"></span><h2>Population size<a class="headerlink" href="#population-size" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Some nodes on population size and the common gotchas, especially
+how this relates to ploidy. Should link to the demography page and
+model sections for more details.</p>
+</div>
+</div>
+<div class="section" id="genome-properties">
+<span id="sec-ancestry-genome-properties"></span><h2>Genome properties<a class="headerlink" href="#genome-properties" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>This is text taken from the old api.rst. Reuse/adapt as appropriate.</p>
+</div>
+<p>When running simulations we define the length <span class="math notranslate nohighlight">\(L\)</span> of the sequence in
+question using the <code class="docutils literal notranslate"><span class="pre">length</span></code> parameter. This defines the coordinate space
+within which trees and mutations are defined. <span class="math notranslate nohighlight">\(L\)</span> is a continuous value,
+so units are arbitrary, and coordinates can take any continuous value from <span class="math notranslate nohighlight">\(0\)</span> up to
+(but not including) <span class="math notranslate nohighlight">\(L\)</span>. (So, although we recommend setting the units of length to be
+analogous to “bases”, events can occur at fractional positions.)
+Mutations occur in an infinite sites process along this sequence,
+and mutation rates are specified per generation, per unit of sequence length.
+Thus, given the per-generation mutation rate <span class="math notranslate nohighlight">\(\mu\)</span>, the rate of mutation
+over the entire sequence in coalescent time units is {math}<code class="docutils literal notranslate"><span class="pre">\theta</span> <span class="pre">=</span> <span class="pre">4</span> <span class="pre">N_e</span> <span class="pre">\mu</span> <span class="pre">L</span></code>. It is important to remember these scaling factors when comparing with
+analytical results!</p>
+<div class="section" id="genome-length">
+<span id="sec-ancestry-genome-length"></span><h3>Genome length<a class="headerlink" href="#genome-length" title="Permalink to this headline">¶</a></h3>
+<p>There are a number of different ways to specify the length of the
+chromosome that we want to simulate. In the absence of recombination
+and gene conversion, we assume a genome of length 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">ts</span><span class="o">.</span><span class="n">sequence_length</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>If a recombination or gene conversion rate is specified, though, we
+must define a <code class="docutils literal notranslate"><span class="pre">sequence_length</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+        <span class="mi">3</span><span class="p">,</span> <span class="n">recombination_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">sequence_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ts</span><span class="o">.</span><span class="n">sequence_length</span><span class="p">,</span> <span class="n">ts</span><span class="o">.</span><span class="n">num_trees</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10.0, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">assert</span> <span class="n">ts</span><span class="o">.</span><span class="n">num_trees</span> <span class="o">&gt;</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example we have a uniform recombination rate between all
+positions along the genome. We can also simulate variable
+recombination rates along the genome using a <a class="reference internal" href="api.html#msprime.RateMap" title="msprime.RateMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">RateMap</span></code></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">rate_map</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">RateMap</span><span class="p">(</span>
+        <span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+        <span class="n">rate</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
+    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">recombination_rate</span><span class="o">=</span><span class="n">rate_map</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ts</span><span class="o">.</span><span class="n">sequence_length</span><span class="p">,</span> <span class="n">ts</span><span class="o">.</span><span class="n">num_trees</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20.0, 10)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we specify varying recombination rates for a genome of length 20,
+and there’s a hotspot from position 10 to 12. In this case we don’t
+need to specify the <code class="docutils literal notranslate"><span class="pre">sequence_length</span></code> in the call to <code class="docutils literal notranslate"><span class="pre">sim_ancestry</span></code>
+because it’s already defined by the <a class="reference internal" href="api.html#msprime.RateMap" title="msprime.RateMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">RateMap</span></code></a>.</p>
+</div>
+<div class="section" id="discrete-or-continuous">
+<span id="sec-ancestry-discrete-genome"></span><h3>Discrete or continuous?<a class="headerlink" href="#discrete-or-continuous" title="Permalink to this headline">¶</a></h3>
+<p>By default, we assume that the genome we are simulating is <em>discrete</em>
+so that genome coordinates are at integer positions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+        <span class="mi">3</span><span class="p">,</span> <span class="n">recombination_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">sequence_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ts</span><span class="o">.</span><span class="n">sequence_length</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">ts</span><span class="o">.</span><span class="n">num_trees</span> <span class="o">&lt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_35_0.svg" src="_images/ancestry_35_0.svg" /></div>
+</div>
+<p>We can also simulate a continous genome by setting
+<code class="docutils literal notranslate"><span class="pre">discrete_genome=False</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+        <span class="mi">3</span><span class="p">,</span> <span class="n">recombination_rate</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">sequence_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">discrete_genome</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">random_seed</span><span class="o">=</span><span class="mi">33</span><span class="p">)</span>
+    <span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_37_0.svg" src="_images/ancestry_37_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">ts</span><span class="o">.</span><span class="n">num_trees</span> <span class="o">&lt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we see that the breakpoints along the genome occur at floating point
+positions. Simulating a continuous genome sequence can be useful for
+theoretical work, but we recommend using discrete coordinates for most
+purposes.</p>
+</div>
+<div class="section" id="recombination">
+<span id="sec-ancestry-recombination"></span><h3>Recombination<a class="headerlink" href="#recombination" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>This is old text taken from api.rst. Reuse as appropriate.
+Note that some of this is specific to the Hudson model and so
+should perhaps be moved in there.</p>
+</div>
+<p>Similarly, recombination rates are per unit of sequence length and per
+generation in <code class="docutils literal notranslate"><span class="pre">msprime</span></code>. Thus, given the per generation crossover rate
+<span class="math notranslate nohighlight">\(r\)</span>, the overall rate of recombination between the ends of the sequence
+in coalescent time units is <span class="math notranslate nohighlight">\(\rho = 4 N_e r L\)</span>. Although breakpoints do
+not necessarily occur at integer locations, the underlying recombination model
+is finite, and the behaviour of a small number of loci can be modelled using
+the <a class="reference internal" href="legacy.html#msprime.RecombinationMap" title="msprime.RecombinationMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">RecombinationMap</span></code></a> class. However, this is considered an advanced
+feature and the majority of cases should be well served with the default
+recombination model and number of loci.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Examples of the different ways we can specify recombination
+rates. Ideally we’d start with an
+example with one GC event where we could explain what happened.
+This might be tricky to finesse.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+        <span class="mi">3</span><span class="p">,</span> <span class="n">recombination_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">sequence_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ts</span><span class="o">.</span><span class="n">sequence_length</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">ts</span><span class="o">.</span><span class="n">num_trees</span> <span class="o">&lt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="gene-conversion">
+<span id="sec-ancestry-gene-conversion"></span><h3>Gene conversion<a class="headerlink" href="#gene-conversion" title="Permalink to this headline">¶</a></h3>
+<p>Gene conversion events are defined by two parameters: the rate at which gene
+conversion events are initiated and the distribution of tract lengths.
+In the default case of discrete genome coordinates, tract lengths are drawn
+from a geometric distribution with mean gene_conversion_tract_length (which
+must be at least 1). Note that if we specify a tract length of 1, then all
+gene conversion tracts will have length exactly 1.
+In the following example one gene conversion event of length 1 has occured.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+        <span class="mi">3</span><span class="p">,</span> <span class="n">gene_conversion_rate</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">gene_conversion_tract_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">sequence_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">ts</span><span class="o">.</span><span class="n">sequence_length</span>
+    <span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_47_0.svg" src="_images/ancestry_47_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">ts</span><span class="o">.</span><span class="n">num_trees</span> <span class="o">&lt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Continous genomes can also be used. In this case the parameters define
+the rate at which gene conversion events are initiated per unit of sequence
+length and the mean of the exponentially distributed gene conversion tract
+lengths. The following example shows the same simulation as above but for a
+continuous genome of length 1 and scaled gene conversion parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+        <span class="mi">3</span><span class="p">,</span> <span class="n">gene_conversion_rate</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">gene_conversion_tract_length</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">sequence_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">discrete_genome</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ts</span><span class="o">.</span><span class="n">sequence_length</span>
+    <span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_50_0.svg" src="_images/ancestry_50_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">ts</span><span class="o">.</span><span class="n">num_trees</span> <span class="o">&lt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Recombination and gene conversion at constant rates can be simulated alongside.
+In the following example recombinations at site 60 and 97 have occured in addition
+to a gene conversion event covering the tract from site 76 to site 80.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+        <span class="mi">3</span><span class="p">,</span> <span class="n">sequence_length</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">recombination_rate</span><span class="o">=</span><span class="mf">0.003</span><span class="p">,</span>
+        <span class="n">gene_conversion_rate</span><span class="o">=</span><span class="mf">0.002</span><span class="p">,</span> <span class="n">gene_conversion_tract_length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">random_seed</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">ts</span><span class="o">.</span><span class="n">sequence_length</span>
+    <span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_53_0.svg" src="_images/ancestry_53_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">ts</span><span class="o">.</span><span class="n">num_trees</span> <span class="o">&lt;</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Variable recombination rates and constant gene conversion rates can be combined.
+In the next example we define a recombination map with a high recombination rate between
+site 10 and site 11 and a constant gene conversion rate with a mean tract length of 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">rate_map</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">RateMap</span><span class="p">(</span>
+        <span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+        <span class="n">rate</span><span class="o">=</span><span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">])</span>
+    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+        <span class="mi">3</span><span class="p">,</span> <span class="n">recombination_rate</span><span class="o">=</span><span class="n">rate_map</span><span class="p">,</span>
+        <span class="n">gene_conversion_rate</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">gene_conversion_tract_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">random_seed</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">ts</span><span class="o">.</span><span class="n">sequence_length</span>
+    <span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_56_0.svg" src="_images/ancestry_56_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">ts</span><span class="o">.</span><span class="n">num_trees</span> <span class="o">&lt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multiple-chromosomes">
+<span id="sec-ancestry-multiple-chromosomes"></span><h3>Multiple chromosomes<a class="headerlink" href="#multiple-chromosomes" title="Permalink to this headline">¶</a></h3>
+<p>Multiple chromosomes can be simulated by specifying a recombination map with
+single-bp segments with recombination probability 1/2 separating adjacent
+chromosomes. By simulating using <code class="docutils literal notranslate"><span class="pre">sim_ancestry</span></code> and <code class="docutils literal notranslate"><span class="pre">discrete_genome=True</span></code>
+(the default setting), we set the recombination rate so that chromosomes
+separated by such “hotspots” have a 50% chance of being inherited from the
+same parent.</p>
+<p>The probability that a recombination breakpoint occurs at a given base pair
+that has recombination rate <span class="math notranslate nohighlight">\(r\)</span> is <span class="math notranslate nohighlight">\(1-e^{-r}\)</span>. Thus, we set the
+recombination rate in the base pair segments separating chromosomes to
+<span class="math notranslate nohighlight">\(\log(2)\)</span>. This ensures that the recombination probility each generation
+is 1/2.</p>
+<p>For example, the following defines a recombination map for three chromosomes
+each 1 cM in length:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">msprime</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+    <span class="n">r_chrom</span> <span class="o">=</span> <span class="mf">1e-8</span>
+    <span class="n">r_break</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">positions</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">,</span> <span class="mf">1e6</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">2e6</span><span class="p">,</span> <span class="mf">2e6</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">3e6</span><span class="p">]</span>
+    <span class="n">rates</span> <span class="o">=</span> <span class="p">[</span><span class="n">r_chrom</span><span class="p">,</span> <span class="n">r_break</span><span class="p">,</span> <span class="n">r_chrom</span><span class="p">,</span> <span class="n">r_break</span><span class="p">,</span> <span class="n">r_chrom</span><span class="p">]</span>
+    <span class="n">rate_map</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">RateMap</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">rates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The main purpose of simulating multiple chromosomes together (instead of
+running independent simulations for each chromosome) is to capture the correct
+correlation between trees on distinct chromosomes. (Note that for many purposes,
+this may not be necessary, and simulating chromosomes independently may be
+preferred for efficiency.)
+To get the correct correlation between chromosomes, we must use the
+<a class="reference internal" href="#sec-ancestry-models-dtwf"><span class="std std-ref">discrete-time Wright-Fisher</span></a> model in the
+recent past. Because correlations between chromosomes break down very rapidly,
+we only need to simulate using <code class="docutils literal notranslate"><span class="pre">dtwf</span></code> for roughly 10-20 generations, after which
+we can switch to the <code class="docutils literal notranslate"><span class="pre">hudson</span></code> model to finish the simulation more efficiently.</p>
+<p>For example, simulating 10 sampled diploid individuals using the recombination
+map defined above for three chromosomes and switching from the <code class="docutils literal notranslate"><span class="pre">dtwf</span></code> to
+<code class="docutils literal notranslate"><span class="pre">hudson</span></code> model 20 generations ago, we run</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">tree_sequence</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+        <span class="mi">10</span><span class="p">,</span>
+        <span class="n">population_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">recombination_rate</span><span class="o">=</span><span class="n">rate_map</span><span class="p">,</span>
+        <span class="n">model</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;dtwf&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;hudson&quot;</span><span class="p">)]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To isolate tree sequences for each chromosome, we can trim the full tree sequence
+for each chromosome by defining the end points of each chromosome and using
+the <code class="docutils literal notranslate"><span class="pre">keep_intervals</span></code> fuction. It is important to specify <code class="docutils literal notranslate"><span class="pre">simplify=False</span></code> so
+that node indices remain consistent across chromosomes. The function <code class="docutils literal notranslate"><span class="pre">trim()</span></code>
+is then used to trim the tree sequences to the focal chromosome, so that position
+indices begin at 0 within each chromosome tree sequence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">chrom_positions</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">,</span> <span class="mf">2e6</span><span class="p">,</span> <span class="mf">3e6</span><span class="p">]</span>
+    <span class="n">ts_chroms</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">chrom_positions</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">chrom_positions</span><span class="p">[</span><span class="n">j</span><span class="p">:</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="n">chrom_ts</span> <span class="o">=</span> <span class="n">tree_sequence</span><span class="o">.</span><span class="n">keep_intervals</span><span class="p">([[</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">]],</span> <span class="n">simplify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ts_chroms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chrom_ts</span><span class="o">.</span><span class="n">trim</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This gives us a list of tree sequences, one for each chromosome, in the order that
+they were stitched together in the initial recombination map.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Add a section to the Tutorial showing how to access tree sequences across
+chromosomes and showing the correlation of trees on different chromosomes
+using the <code class="docutils literal notranslate"><span class="pre">dtwf</span></code> model.</p>
+</div>
+</div>
+</div>
+<div class="section" id="controlling-randomness">
+<span id="sec-ancestry-controlling-randomness"></span><h2>Controlling randomness<a class="headerlink" href="#controlling-randomness" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="random-seeds">
+<span id="sec-ancestry-random-seed"></span><h3>Random seeds<a class="headerlink" href="#random-seeds" title="Permalink to this headline">¶</a></h3>
+<p>Stochastic simulations depend on a source of randomness, provided
+by a <a class="reference external" href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">psuedorandom number generator</a>.
+Msprime uses the <a class="reference external" href="https://www.gnu.org/software/gsl/doc/html/rng.html">GNU Scientific Library</a> to generate high-quality
+random numbers. The particular trajectory produced by a pseudorandom number
+generator is controlled by the “seed” it is provided.</p>
+<p>By default, msprime generates random seeds using a private instance of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">random.Random</span></code>, which should guarantee unique seeds are produced
+even if (e.g.) many simulations are started at the same time in different
+processes. In particular, simulations run concurrently in subprocesses using
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">concurrent.futures</span></code> or <code class="xref py py-mod docutils literal notranslate"><span class="pre">multiprocessing</span></code> will be assigned unique
+seeds by default.</p>
+<p>Thus, if we run two simulations with the same parameters, we will get different
+results, as we can see from the different times of the last node:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ts</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">time</span>
+
+<span class="mf">0.13313422084255794</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13313422084255794
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ts</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">nodes</span>
+
+<span class="mf">3.2090602418210956</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.2090602418210956
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">random_seed</span></code> argument to <a class="reference internal" href="api.html#msprime.sim_ancestry" title="msprime.sim_ancestry"><code class="xref py py-func docutils literal notranslate"><span class="pre">sim_ancestry()</span></code></a> allows us specify
+seeds explicitly, making the output of the simulation fully deterministic:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">ts</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">nodes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+            <div>
+                <style scoped="">
+                    .tskit-table tbody tr th:only-of-type {vertical-align: middle;}
+                    .tskit-table tbody tr th {vertical-align: top;}
+                    .tskit-table tbody td {text-align: right;}
+                </style>
+                <table border="1" class="tskit-table">
+                    <thead>
+                        <tr>
+                            <th>id</th><th>flags</th><th>population</th><th>individual</th><th>time</th><th>metadata</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0.00000000000000</td><td></td></tr>
+<tr><td>1</td><td>1</td><td>0</td><td>0</td><td>0.00000000000000</td><td></td></tr>
+<tr><td>2</td><td>0</td><td>0</td><td>-1</td><td>0.93853616544368</td><td></td></tr>
+
+                    </tbody>
+                </table>
+            </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">ts</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">nodes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+            <div>
+                <style scoped="">
+                    .tskit-table tbody tr th:only-of-type {vertical-align: middle;}
+                    .tskit-table tbody tr th {vertical-align: top;}
+                    .tskit-table tbody td {text-align: right;}
+                </style>
+                <table border="1" class="tskit-table">
+                    <thead>
+                        <tr>
+                            <th>id</th><th>flags</th><th>population</th><th>individual</th><th>time</th><th>metadata</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0.00000000000000</td><td></td></tr>
+<tr><td>1</td><td>1</td><td>0</td><td>0</td><td>0.00000000000000</td><td></td></tr>
+<tr><td>2</td><td>0</td><td>0</td><td>-1</td><td>0.93853616544368</td><td></td></tr>
+
+                    </tbody>
+                </table>
+            </div>
+</div></div>
+</div>
+</div>
+<div class="section" id="running-replicate-simulations">
+<span id="sec-ancestry-replication"></span><h3>Running replicate simulations<a class="headerlink" href="#running-replicate-simulations" title="Permalink to this headline">¶</a></h3>
+<p>Simulations are random, and we will therefore usually want to have
+many independant replicates for a particular set of parameters.
+The <code class="docutils literal notranslate"><span class="pre">num_replicates</span></code> parameter provides a convenient and efficient
+way to iterate over a number of replicate simulations. For example,
+this is a good way to compute the mean and variance of the time to the most
+recent common ancestor in a set of simulations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+    <span class="n">num_replicates</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">tmrca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_replicates</span><span class="p">)</span>
+    <span class="n">replicates</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">num_replicates</span><span class="o">=</span><span class="n">num_replicates</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">replicate_index</span><span class="p">,</span> <span class="n">ts</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">replicates</span><span class="p">):</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+        <span class="n">tmrca</span><span class="p">[</span><span class="n">replicate_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">tmrca</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">tmrca</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.799291711240622, 3.920289255957004)
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s important to note that the replicate simulations are generated
+lazily here on demand - the <code class="docutils literal notranslate"><span class="pre">replicates</span></code> variable is a Python iterator.
+This means we use much less memory that we would if we stored each
+of the replicate simulations in a list.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The return type of <code class="docutils literal notranslate"><span class="pre">sim_ancestry</span></code> changes when we use the
+<code class="docutils literal notranslate"><span class="pre">num_replicates</span></code> argument. If <code class="docutils literal notranslate"><span class="pre">num_replicates</span></code> is not specified
+or <code class="docutils literal notranslate"><span class="pre">None</span></code>, we return an instance of <a class="reference external" href="https://tskit.readthedocs.io/en/stable/python-api.html#tskit.TreeSequence" title="(in tskit v0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tskit.TreeSequence</span></code></a>.
+If it is specified, we return an <em>iterator</em> over
+a set of <a class="reference external" href="https://tskit.readthedocs.io/en/stable/python-api.html#tskit.TreeSequence" title="(in tskit v0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tskit.TreeSequence</span></code></a> instances.</p>
+</div>
+</div>
+</div>
+<div class="section" id="recording-more-information">
+<h2>Recording more information<a class="headerlink" href="#recording-more-information" title="Permalink to this headline">¶</a></h2>
+<p>By default <code class="docutils literal notranslate"><span class="pre">msprime</span></code> stores the minimum amount of information required
+to represent the simulated genealogical history of the samples. Sometimes
+we are interested in more detailed information; this section gives details
+of options that allow us to do this.</p>
+<div class="section" id="ancestral-recombination-graph">
+<span id="sec-ancestry-full-arg"></span><h3>Ancestral recombination graph<a class="headerlink" href="#ancestral-recombination-graph" title="Permalink to this headline">¶</a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">msprime</span></code> we usually want to simulate the coalescent with recombination
+and represent the output as efficiently as possible. As a result, we don’t
+store individual recombination events, but rather their effects on the output
+tree sequence. We also do not explicitly store common ancestor events that
+do not result in marginal coalescences. For some purposes, however, we want
+to get information on the full history of the simulation, not just the minimal
+representation of its outcome. The <code class="docutils literal notranslate"><span class="pre">record_full_arg</span></code> option to
+<a class="reference internal" href="api.html#msprime.sim_ancestry" title="msprime.sim_ancestry"><code class="xref py py-func docutils literal notranslate"><span class="pre">sim_ancestry()</span></code></a> provides this functionality, as illustrated in the
+following example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+        <span class="mi">3</span><span class="p">,</span> <span class="n">recombination_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">sequence_length</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">record_full_arg</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+    <span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id	flags	population	individual	time	metadata
+0	1	0	0	0.00000000000000	
+1	1	0	0	0.00000000000000	
+2	1	0	1	0.00000000000000	
+3	1	0	1	0.00000000000000	
+4	1	0	2	0.00000000000000	
+5	1	0	2	0.00000000000000	
+6	0	0	-1	0.21230673613116	
+7	0	0	-1	0.51485156833449	
+8	0	0	-1	0.71161448701612	
+9	131072	0	-1	0.91107704517576	
+10	131072	0	-1	0.91107704517576	
+11	262144	0	-1	1.21743776274571	
+12	0	0	-1	1.23130397112052	
+13	0	0	-1	4.80416300493305	
+</pre></div>
+</div>
+<img alt="_images/ancestry_79_1.svg" src="_images/ancestry_79_1.svg" /></div>
+</div>
+<p>After running the simulation we first print out the <a class="reference external" href="https://tskit.readthedocs.io/en/stable/data-model.html#node-table">node table</a>, which
+contains information on all the nodes in the tree sequence. Note that <code class="docutils literal notranslate"><span class="pre">flags</span></code>
+column contains several different values: all of the sample nodes (at time 0)
+have a flag value of <code class="docutils literal notranslate"><span class="pre">1</span></code> (<a class="reference external" href="https://tskit.readthedocs.io/en/stable/python-api.html#tskit.NODE_IS_SAMPLE" title="(in tskit v0.3)"><code class="xref py py-data docutils literal notranslate"><span class="pre">tskit.NODE_IS_SAMPLE</span></code></a>). Most other
+nodes have a flag value of <code class="docutils literal notranslate"><span class="pre">0</span></code>, which is the standard for internal nodes
+in a coalescent simulations.</p>
+<p>Nodes 9 and 10 have flags equal to 131072 (<a class="reference internal" href="api.html#msprime.msprime.NODE_IS_RE_EVENT" title="msprime.msprime.NODE_IS_RE_EVENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">NODE_IS_RE_EVENT</span></code></a>), which
+tells us that they correspond to a recombination event in the ARG. A
+recombination event results in two extra nodes being recorded, one identifying
+the individual providing the genetic material to the left of the breakpoint and
+the other identifying the individuals providing the genetic material to the
+right. The effect of this extra node can be seen in the trees: node 9 is
+present as a ‘unary’ node in the left hand tree and node 10 in the right.</p>
+<p>Node 11 has a flags value of 262144 (<a class="reference internal" href="api.html#msprime.msprime.NODE_IS_CA_EVENT" title="msprime.msprime.NODE_IS_CA_EVENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">NODE_IS_CA_EVENT</span></code></a>), which
+tells us that it is an ARG common ancestor event that <em>did not</em> result
+in marginal coalescence. This class of event also results in unary nodes
+in the trees, which we can see in the example.</p>
+<p>If we wish to reduce these trees down to the minimal representation, we can
+use <a class="reference external" href="https://tskit.readthedocs.io/en/stable/python-api.html#tskit.TreeSequence.simplify" title="(in tskit v0.3)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">tskit.TreeSequence.simplify()</span></code></a>. The resulting tree sequence will have
+all of these unary nodes removed and will be equivalent to (but not identical, due to
+stochastic effects) calling <a class="reference internal" href="api.html#msprime.sim_ancestry" title="msprime.sim_ancestry"><code class="xref py py-func docutils literal notranslate"><span class="pre">sim_ancestry()</span></code></a> without the <code class="docutils literal notranslate"><span class="pre">record_full_arg</span></code>
+argument.</p>
+<p>Migrations nodes are also recording in the ARG using the
+<a class="reference internal" href="api.html#msprime.msprime.NODE_IS_MIG_EVENT" title="msprime.msprime.NODE_IS_MIG_EVENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">NODE_IS_MIG_EVENT</span></code></a> flag. See the <a class="reference internal" href="api.html#sec-api-node-flags"><span class="std std-ref">Node flags</span></a>
+section for more details.</p>
+</div>
+<div class="section" id="migration-events">
+<span id="sec-ancestry-record-migrations"></span><h3>Migration events<a class="headerlink" href="#migration-events" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>examples of using the record_migrations</p>
+</div>
+</div>
+<div class="section" id="census-events">
+<span id="sec-ancestry-census-events"></span><h3>Census events<a class="headerlink" href="#census-events" title="Permalink to this headline">¶</a></h3>
+<p>Census events allow you to add a node to each branch of the tree sequence at a given time
+during the simulation. This can be useful when you wish to study haplotypes that are
+ancestral to your simulated sample, or when you wish to know which lineages were present in
+which populations at specified times.</p>
+<p>For instance, the following code specifies a simulation with two samples drawn from each of
+two populations. There are two demographic events: a migration rate change and a census
+event. At generation 100 and earlier, the two populations exchange migrants at a rate of
+0.05. At generation 5000, a census is performed:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">pop_config</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">PopulationConfiguration</span><span class="p">(</span><span class="n">sample_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">initial_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">mig_rate_change</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">MigrationRateChange</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span>
+                <span class="n">population_configurations</span><span class="o">=</span><span class="p">[</span><span class="n">pop_config</span><span class="p">,</span> <span class="n">pop_config</span><span class="p">],</span>
+                <span class="n">length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                <span class="n">demographic_events</span><span class="o">=</span><span class="p">[</span><span class="n">mig_rate_change</span><span class="p">,</span> <span class="n">msprime</span><span class="o">.</span><span class="n">CensusEvent</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">5000</span><span class="p">)],</span>
+                <span class="n">recombination_rate</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">,</span>
+                <span class="n">random_seed</span><span class="o">=</span><span class="mi">141</span><span class="p">)</span>
+    <span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_83_0.svg" src="_images/ancestry_83_0.svg" /></div>
+</div>
+<p>The resulting tree sequence has nodes on each tree at the specified census time.
+These are the nodes with IDs 8, 9, 10, 11, 12 and 13.</p>
+<p>This tells us that the genetic material ancestral to the present day sample was
+held within 5 haplotypes at time 5000. The node table shows us that four of
+these haplotypes (nodes 8, 9, 10 and 11) were in population 0 at this time, and
+two of these haplotypes (nodes 12 and 13) were in population 1 at this time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id	flags	population	individual	time	metadata
+0	1	0	-1	0.00000000000000	
+1	1	0	-1	0.00000000000000	
+2	1	1	-1	0.00000000000000	
+3	1	1	-1	0.00000000000000	
+4	0	1	-1	2350.08685278955454	
+5	0	1	-1	3759.20387382751323	
+6	0	0	-1	4234.97992185138355	
+7	0	1	-1	4598.83898042142937	
+8	1048576	0	-1	5000.00000000000000	
+9	1048576	0	-1	5000.00000000000000	
+10	1048576	0	-1	5000.00000000000000	
+11	1048576	0	-1	5000.00000000000000	
+12	1048576	1	-1	5000.00000000000000	
+13	1048576	1	-1	5000.00000000000000	
+14	0	1	-1	5246.90282987397495	
+15	0	0	-1	8206.73121309170347	
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we wish to study these ancestral haplotypes further, we can simplify the tree sequence
+with respect to the census nodes and perform subsequent analyses on this simplified tree
+sequence.
+In this example, <code class="docutils literal notranslate"><span class="pre">ts_anc</span></code> is a tree sequence obtained from the original tree sequence
+<code class="docutils literal notranslate"><span class="pre">ts</span></code> by labelling the census nodes as samples and removing all nodes and edges that are
+not ancestral to these census nodes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ts</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">flags</span><span class="o">==</span><span class="n">msprime</span><span class="o">.</span><span class="n">NODE_IS_CEN_EVENT</span><span class="p">]</span>
+    <span class="n">ts_anc</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="n">nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="manipulating-simulation-time">
+<h2>Manipulating simulation time<a class="headerlink" href="#manipulating-simulation-time" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stopping-simulations-early">
+<span id="sec-ancestry-end-time"></span><h3>Stopping simulations early<a class="headerlink" href="#stopping-simulations-early" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Go through an example of using the end time.</p>
+</div>
+</div>
+<div class="section" id="setting-the-start-time">
+<span id="sec-ancestry-start-time"></span><h3>Setting the start time<a class="headerlink" href="#setting-the-start-time" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Go through an example of using the start time.</p>
+</div>
+</div>
+</div>
+<div class="section" id="specifying-the-initial-state">
+<span id="sec-ancestry-initial-state"></span><h2>Specifying the initial state<a class="headerlink" href="#specifying-the-initial-state" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Go through an example where we specify the initial state
+and explain that specifying the samples is actually the same thing.</p>
+</div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Port this old documentation to the new format. The sectioning
+is definitely not right here also, as we’ve just pasted in the old
+tutorial content directly in here.</p>
+</div>
+<p>By default <code class="docutils literal notranslate"><span class="pre">msprime</span></code> simulations are initialised by specifying a set of samples,
+using the <code class="docutils literal notranslate"><span class="pre">sample_size</span></code> or  <code class="docutils literal notranslate"><span class="pre">samples</span></code> parameters to <a class="reference internal" href="legacy.html#msprime.simulate" title="msprime.simulate"><code class="xref py py-func docutils literal notranslate"><span class="pre">simulate()</span></code></a>. This
+initialises the simulation with segments of ancestral material covering the
+whole sequence. Simulation then proceeds backwards in time until a most recent
+common ancestor has been found at all points along this sequence. We can
+also start simulations from different initial conditions by using the
+<code class="docutils literal notranslate"><span class="pre">from_ts</span></code> argument to <a class="reference internal" href="legacy.html#msprime.simulate" title="msprime.simulate"><code class="xref py py-func docutils literal notranslate"><span class="pre">simulate()</span></code></a>. Informally, we take an ‘unfinished’
+tree sequence as a parameter to simulate, initialise the simulation
+from the state of this tree sequence and then run the simulation until
+coalescence. The returned tree sequence is then the result of taking the
+input tree sequence and completing the trees using the coalescent.</p>
+<p>This is useful for forwards-time simulators such as
+<a class="reference external" href="https://messerlab.org/slim/">SLiM</a> that can output tree sequences. By running
+forward-time simulation for a certain number of generations we obtain a
+tree sequence, but these trees may not have had sufficient time to
+reach a most recent common ancestor. By using the <code class="docutils literal notranslate"><span class="pre">from_ts</span></code> argument
+to <a class="reference internal" href="legacy.html#msprime.simulate" title="msprime.simulate"><code class="xref py py-func docutils literal notranslate"><span class="pre">simulate()</span></code></a> we can combine the best of both forwards- and
+backwards-time simulators. The recent past can be simulated forwards
+in time and the ancient past by the coalescent. The coalescent
+simulation is initialised by the root segments of the
+input tree sequence, ensuring that the minimal amount of ancestral
+material possible is simulated.</p>
+<!---
+Please see the :ref:`tutorial <sec_tutorial_simulate_from>` for an example of
+-->
+<!---
+how to use this feature with a simple forwards-time Wright-Fisher simulator
+-->
+<div class="section" id="input-requirements">
+<h3>Input requirements<a class="headerlink" href="#input-requirements" title="Permalink to this headline">¶</a></h3>
+<p>Any tree sequence can be provided as input to this process, but there is a
+specific topological requirement that must be met for the simulations to be
+statistically correct. To ensure that ancestral segments are correctly
+associated within chromosomes when constructing the initial conditions for the
+coalescent simulation, forward-time simulators <strong>must</strong> retain the nodes
+corresponding to the initial generation. Furthermore, for every sample in the
+final generation (i.e. the extant population at the present time) there must be
+a path to one of the founder population nodes.</p>
+<!---
+(Please see the :ref:`tutorial
+-->
+<!---
+<sec_tutorial_simulate_from>` for further explanation of this point and an
+-->
+<!---
+example.)
+-->
+</div>
+</div>
+<div class="section" id="models">
+<span id="sec-ancestry-models"></span><h2>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>quick overview of what a model <em>is</em> and also an example of
+how to use it.</p>
+</div>
+<div class="section" id="hudson-coalescent">
+<span id="sec-ancestry-models-hudson"></span><h3>Hudson coalescent<a class="headerlink" href="#hudson-coalescent" title="Permalink to this headline">¶</a></h3>
+<p>The default simulation model in <code class="docutils literal notranslate"><span class="pre">msprime</span></code> is the coalescent
+with recombination, based on the classical <code class="docutils literal notranslate"><span class="pre">ms</span></code> program.
+Please see the <a class="reference internal" href="api.html#msprime.StandardCoalescent" title="msprime.StandardCoalescent"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span> <span class="pre">documentation</span></code></a>
+for a formal description of the model.</p>
+<p>The standard coalescent is the default model of ancestry used
+in msprime if we don’t specify any value for the <code class="docutils literal notranslate"><span class="pre">model</span></code> parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">ts1</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ts2</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;hudson&quot;</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># This is the same simulation so we should get the same</span>
+    <span class="c1"># node and edge tables.</span>
+    <span class="k">assert</span> <span class="n">ts1</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">nodes</span> <span class="o">==</span> <span class="n">ts2</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">nodes</span>
+    <span class="k">assert</span> <span class="n">ts1</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">edges</span> <span class="o">==</span> <span class="n">ts2</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">edges</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="smc-approximations">
+<span id="sec-ancestry-models-smc"></span><h3>SMC approximations<a class="headerlink" href="#smc-approximations" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Write this section, including a simple example ideally showing
+a property of an SMC simulation</p>
+</div>
+</div>
+<div class="section" id="discrete-time-wright-fisher">
+<span id="sec-ancestry-models-dtwf"></span><h3>Discrete Time Wright-Fisher<a class="headerlink" href="#discrete-time-wright-fisher" title="Permalink to this headline">¶</a></h3>
+<p>Msprime provides the option to perform discrete-time Wright-Fisher simulations
+for scenarios when the coalescent model is not appropriate, including large
+sample sizes, multiple chromosomes, or recent migration.
+Please see the <a class="reference internal" href="api.html#msprime.DiscreteTimeWrightFisher" title="msprime.DiscreteTimeWrightFisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span> <span class="pre">documentation</span></code></a>
+for a formal description of the model.</p>
+<p>All other parameters can be set as usual. Note that for discrete-time
+Wright-Fisher simulations with population structure, each row of the migration
+matrix must sum to one or less.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>An example of the DTWF. Show the discrete with an example of a
+non-binary tree.</p>
+</div>
+</div>
+<div class="section" id="multiple-merger-coalescents">
+<span id="sec-ancestry-models-multiple-mergers"></span><h3>Multiple merger coalescents<a class="headerlink" href="#multiple-merger-coalescents" title="Permalink to this headline">¶</a></h3>
+<p>Some evolutionary scenarios, such as a skewed offspring distribution
+combined with a type III survivorship curve, range expansion, and
+rapid adaptation, can predict genealogies with up to four simultaneous
+multiple mergers. Msprime provides the option to simulate from two classes
+of such genealogical processes: the <a class="reference internal" href="api.html#msprime.BetaCoalescent" title="msprime.BetaCoalescent"><code class="xref py py-class docutils literal notranslate"><span class="pre">BetaCoalescent</span></code></a> and
+the <a class="reference internal" href="api.html#msprime.DiracCoalescent" title="msprime.DiracCoalescent"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiracCoalescent</span></code></a>. Please see the API documentation for formal
+details of the models.</p>
+<p>For haploid organisms, both models result in genealogies in which
+any number of lineages can merge into a common ancestor,
+but only one merger event can take place at a given time. For <span class="math notranslate nohighlight">\(p\)</span>-ploids,
+up to <span class="math notranslate nohighlight">\(2p\)</span> simultaneous mergers can take place, corresponding to the
+<span class="math notranslate nohighlight">\(2p\)</span> available parental chromosome copies.</p>
+<p>The diploid Beta-Xi-coalescent can be simulated as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">msprime</span><span class="o">.</span><span class="n">BetaCoalescent</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.001</span><span class="p">))</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_101_0.svg" src="_images/ancestry_101_0.svg" /></div>
+</div>
+<p>The specified value of <span class="math notranslate nohighlight">\(\alpha = 1.001\)</span> corresponds to a heavily skewed
+offspring distribution. Values closer to <span class="math notranslate nohighlight">\(\alpha = 2\)</span> result in trees
+whose distribution is closer to that of the standard coalescent, often featuring
+no multiple mergers for small sample sizes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">msprime</span><span class="o">.</span><span class="n">BetaCoalescent</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.8</span><span class="p">))</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_103_0.svg" src="_images/ancestry_103_0.svg" /></div>
+</div>
+<p>Multiple mergers still take place in a haploid simulaton, but only one merger
+can take place at a given time:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">msprime</span><span class="o">.</span><span class="n">BetaCoalescent</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.001</span><span class="p">))</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_105_0.svg" src="_images/ancestry_105_0.svg" /></div>
+</div>
+<p>A haploid simulation results in larger individual mergers than a polyploid simulation
+because large mergers typically get broken up into multiple simultaneous mergers
+in the polyploid model.</p>
+<p>The number of generations between merger events in the Beta-coalescent depends
+nonlinearly on both <span class="math notranslate nohighlight">\(\alpha\)</span> and the population size <span class="math notranslate nohighlight">\(N\)</span>
+as detailed above.
+For a fixed <span class="math notranslate nohighlight">\(\alpha\)</span>, the number of generations between common ancestor events
+is proportional to <span class="math notranslate nohighlight">\(N^{\alpha - 1}\)</span>, albeit with a complicated constant of
+proportionality that depends on <span class="math notranslate nohighlight">\(\alpha\)</span>. The dependence on <span class="math notranslate nohighlight">\(\alpha\)</span>
+for fixed <span class="math notranslate nohighlight">\(N\)</span> is not monotone. Thus, branch lengths and the number of
+generations until a most recent common ancestor depend on both of these parameters.</p>
+<p>To illustrate, for <span class="math notranslate nohighlight">\(\alpha\)</span> close to 2 the relationship between effective
+population size and number of generations is almost linear:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">population_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">msprime</span><span class="o">.</span><span class="n">BetaCoalescent</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.99</span><span class="p">))</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">tmrca</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">population_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">msprime</span><span class="o">.</span><span class="n">BetaCoalescent</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.99</span><span class="p">))</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">tmrca</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.14959691919068155
+14.286394871874865
+</pre></div>
+</div>
+</div>
+</div>
+<p>For <span class="math notranslate nohighlight">\(\alpha\)</span> close to 1 the effective population size has little effect:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">population_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">msprime</span><span class="o">.</span><span class="n">BetaCoalescent</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.1</span><span class="p">))</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">tmrca</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">population_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">msprime</span><span class="o">.</span><span class="n">BetaCoalescent</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.1</span><span class="p">))</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">tmrca</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.311807036386615
+25.85247192870844
+</pre></div>
+</div>
+</div>
+</div>
+<p>The Dirac-coalescent is simulated similarly in both the diploid case:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">msprime</span><span class="o">.</span><span class="n">DiracCoalescent</span><span class="p">(</span><span class="n">psi</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_111_0.svg" src="_images/ancestry_111_0.svg" /></div>
+</div>
+<p>and in the haploid case:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">msprime</span><span class="o">.</span><span class="n">DiracCoalescent</span><span class="p">(</span><span class="n">psi</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">draw_svg</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ancestry_113_0.svg" src="_images/ancestry_113_0.svg" /></div>
+</div>
+<p>As with the Beta-coalescent, a haploid simulation results in larger individual
+mergers than a polyploid simulation because large mergers typically get broken
+up into multiple simultaneous mergers in the polyploid model. Larger values
+of the parameter <span class="math notranslate nohighlight">\(c &gt; 0\)</span> result in more frequent multiple mergers,
+while larger values of <span class="math notranslate nohighlight">\(0 &lt; \psi \leq 1\)</span> result in multiple mergers
+with more participating lineages. Setting either parameter to 0 would correspond
+to the standard coalescent.</p>
+<p>The Dirac-coalescent is obtained as the infinite population scaling limit of
+Moran models, and therefore branch lengths are proportional to <span class="math notranslate nohighlight">\(N^2\)</span>
+generations, as opposed to <span class="math notranslate nohighlight">\(N\)</span> generations under the standard coalescent.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">population_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">msprime</span><span class="o">.</span><span class="n">DiracCoalescent</span><span class="p">(</span><span class="n">psi</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">tmrca</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">sim_ancestry</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ploidy</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">population_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">msprime</span><span class="o">.</span><span class="n">DiracCoalescent</span><span class="p">(</span><span class="n">psi</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">tmrca</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>64.7216732891741
+6472.167328917411
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="selective-sweeps">
+<span id="sec-ancestry-models-selective-sweeps"></span><h3>Selective sweeps<a class="headerlink" href="#selective-sweeps" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Document the selective sweep models.</p>
+</div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>examples of the selective sweeps models. We want to have
+a single sweep reverting to Hudson, and also lots of sweeps.</p>
+</div>
+</div>
+<div class="section" id="multiple-models">
+<span id="sec-ancestry-models-multiple-models"></span><h3>Multiple models<a class="headerlink" href="#multiple-models" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>This is copied from the old tutorial and is out of date now.
+Update the to use the new model=[(time, model)]`` syntax.
+It’s also too focused on the DTWF model.</p>
+</div>
+<p>In some situations Wright-Fisher simulations are desireable but less
+computationally efficient than coalescent simulations, for example simulating a
+small sample in a recently admixed population. In these cases, a hybrid model
+offers an excellent tradeoff between simulation accuracy and performance.</p>
+<p>This is done through a <a class="reference internal" href="legacy.html#msprime.SimulationModelChange" title="msprime.SimulationModelChange"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationModelChange</span></code></a> event, which is a special type of
+demographic event.</p>
+<p>For example, here we switch from the discrete-time Wright-Fisher model to the
+standard Hudson coalescent 500 generations in the past:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span>
+    <span class="n">sample_size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">Ne</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;dtwf&quot;</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">demographic_events</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">msprime</span><span class="o">.</span><span class="n">SimulationModelChange</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;hudson&quot;</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+<span class="c1"># id      flags   population      individual      time    metadata</span>
+<span class="c1"># 0       1       0       -1      0.00000000000000</span>
+<span class="c1"># 1       1       0       -1      0.00000000000000</span>
+<span class="c1"># 2       1       0       -1      0.00000000000000</span>
+<span class="c1"># 3       1       0       -1      0.00000000000000</span>
+<span class="c1"># 4       1       0       -1      0.00000000000000</span>
+<span class="c1"># 5       1       0       -1      0.00000000000000</span>
+<span class="c1"># 6       0       0       -1      78.00000000000000</span>
+<span class="c1"># 7       0       0       -1      227.00000000000000</span>
+<span class="c1"># 8       0       0       -1      261.00000000000000</span>
+<span class="c1"># 9       0       0       -1      272.00000000000000</span>
+<span class="c1">#10      0       0       -1      1629.06982528980075</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id	flags	population	individual	time	metadata
+0	1	0	-1	0.00000000000000	
+1	1	0	-1	0.00000000000000	
+2	1	0	-1	0.00000000000000	
+3	1	0	-1	0.00000000000000	
+4	1	0	-1	0.00000000000000	
+5	1	0	-1	0.00000000000000	
+6	0	0	-1	78.00000000000000	
+7	0	0	-1	227.00000000000000	
+8	0	0	-1	261.00000000000000	
+9	0	0	-1	272.00000000000000	
+10	0	0	-1	1629.06982528980075	
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because of the integer node times, we can see here that most of the coalescent
+happened during the Wright-Fisher phase of the simulation, and as-of 500
+generations in the past, there were only two lineages left. The continuous
+time standard coalescent model was then used to simulate the ancient past of
+these two lineages.</p>
+</div>
+</div>
+<div class="section" id="notes-for-ms-users">
+<h2>Notes for ms users<a class="headerlink" href="#notes-for-ms-users" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>This is copied from the old api.rst page and needs some updating.</p>
+</div>
+<p>The simulation model in <code class="docutils literal notranslate"><span class="pre">msprime</span></code> closely follows the classical <code class="docutils literal notranslate"><span class="pre">ms</span></code>
+program. Unlike <code class="docutils literal notranslate"><span class="pre">ms</span></code>, however, time is measured in generations rather than
+in units of <span class="math notranslate nohighlight">\(4 N_e\)</span> generations, i.e., “coalescent units”.
+This means that when simulating a population with diploid effective size <span class="math notranslate nohighlight">\(N_e\)</span>,
+the mean time to coalescence between two samples
+in an <code class="docutils literal notranslate"><span class="pre">msprime</span></code> simulation will be around <span class="math notranslate nohighlight">\(2 N_e\)</span>,
+while in an <code class="docutils literal notranslate"><span class="pre">ms</span></code> simulation, the mean time will be around <span class="math notranslate nohighlight">\(0.5\)</span>.
+Internally, <code class="docutils literal notranslate"><span class="pre">msprime</span></code> uses the same algorithm as <code class="docutils literal notranslate"><span class="pre">ms</span></code>,
+and so the <code class="docutils literal notranslate"><span class="pre">Ne</span></code> parameter to the <a class="reference internal" href="legacy.html#msprime.simulate" title="msprime.simulate"><code class="xref py py-func docutils literal notranslate"><span class="pre">simulate()</span></code></a> function
+still acts as a time scaling, and can be set to <code class="docutils literal notranslate"><span class="pre">0.5</span></code> to match many theoretical results,
+or to <code class="docutils literal notranslate"><span class="pre">0.25</span></code> to match <code class="docutils literal notranslate"><span class="pre">ms</span></code>. Population sizes for each
+subpopulation and for past demographic events are also defined as absolute values, <strong>not</strong>
+scaled by <code class="docutils literal notranslate"><span class="pre">Ne</span></code>. All migration rates and growth rates are also per generation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This parameterisation of recombination, mutation and
+migration rates is different to <strong class="program">ms</strong>, which states these
+rates over the entire region and in coalescent time units. The
+motivation for this is to allow the user change the size of the simulated
+region without having to rescale the recombination, gene conversion, and mutation rates,
+and to also allow users directly state times and rates in units of
+generations. However, the <code class="docutils literal notranslate"><span class="pre">mspms</span></code> command line application is
+fully <strong class="program">ms</strong> compatible.
+If recombination and gene conversion are combined the gene conversion
+rate in <strong class="program">ms</strong> is determined by the ratio <span class="math notranslate nohighlight">\(f\)</span>, which corresponds to
+setting <span class="math notranslate nohighlight">\(g = f r\)</span>. In <code class="docutils literal notranslate"><span class="pre">msprime</span></code> the gene conversion rate <span class="math notranslate nohighlight">\(g\)</span> is
+set independently and does not depend on the recombination rate. However,
+<code class="docutils literal notranslate"><span class="pre">mspms</span></code> mimics the <strong class="program">ms</strong> behaviour.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="simulations.html" title="previous page">Running simulations</a>
+    <a class='right-next' id="next-link" href="demography.html" title="next page">Demography</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tskit Developers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

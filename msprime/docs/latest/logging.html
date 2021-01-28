@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logging &#8212; Msprime manual</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="api.html" />
+    <link rel="prev" title="Command line interface" href="cli.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Msprime manual</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Getting started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="quickstart.html">
+   Quickstart
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="installation.html">
+   Installation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Using msprime
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="simulations.html">
+   Running simulations
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ancestry.html">
+     Ancestry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="demography.html">
+     Demography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mutations.html">
+     Mutations
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="utilities.html">
+   Utilities
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="likelihoods.html">
+     Computing likelihoods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rate_maps.html">
+     Rate Maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cli.html">
+     Command line interface
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Logging
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="api.html">
+   API Reference
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="development.html">
+   Developer documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="legacy.html">
+   Legacy (version 0.x) APIs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="changelog.html">
+   Changelog
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CITATION.html">
+   Citing msprime
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial.html">
+   PORTING IN PROGRESS: Tutorial
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Manual for msprime __MSPRIME_VERSION__
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/logging.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tskit-dev/msprime"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/tskit-dev/msprime/issues/new?title=Issue%20on%20page%20%2Flogging.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/tskit-dev/msprime/edit/main/docs/logging.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="logging">
+<h1>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h1>
+<p>Msprime uses the Python <code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code> infrastructure to help debugging
+complex simulations. Messages at the INFO level are high-level information
+about the state of the current simulation, such as switches in simulation
+model, etc. While it is straightforward to set up logging messages using
+the built-in Python methods, the <a class="reference external" href="https://daiquiri.readthedocs.io/en/latest/">daiquiri</a> is a bit more convenient.
+For example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">daiquiri</span>
+
+<span class="kn">import</span> <span class="nn">msprime</span>
+
+
+<span class="k">def</span> <span class="nf">logging_info_example</span><span class="p">():</span>
+    <span class="n">daiquiri</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">)</span>
+    <span class="n">msprime</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">Ne</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;dtwf&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;hudson&quot;</span><span class="p">)])</span>
+</pre></div>
+</div>
+<p>Running this code we would get output something like the following:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2020-06-24 16:02:20,983 [11188] INFO     msprime.ancestry: Running model {&#39;name&#39;: &#39;dtwf&#39;} until max time: 100.000000
+2020-06-24 16:02:20,984 [11188] INFO     msprime.ancestry: Running model {&#39;name&#39;: &#39;hudson&#39;} until max time: inf
+2020-06-24 16:02:20,984 [11188] INFO     msprime.ancestry: Completed at time=1449.4 nodes=19 edges=18
+</pre></div>
+</div>
+<p>When running larger simulations and trying to figure out when
+they might finish, it can be helpful to use the DEBUG logging output.
+For example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">daiquiri</span>
+
+<span class="kn">import</span> <span class="nn">msprime</span>
+
+
+<span class="k">def</span> <span class="nf">logging_debug_example</span><span class="p">():</span>
+    <span class="n">daiquiri</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;DEBUG&quot;</span><span class="p">)</span>
+    <span class="n">msprime</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span>
+        <span class="mi">10</span> <span class="o">**</span> <span class="mi">5</span><span class="p">,</span> <span class="n">Ne</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">recombination_rate</span><span class="o">=</span><span class="mf">2e-8</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">32</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>which gives us:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2020-06-24 16:11:33,373 [11729] INFO     msprime.ancestry: Running model {&#39;name&#39;: &#39;hudson&#39;} until max time: inf
+2020-06-24 16:11:33,396 [11729] DEBUG    msprime.ancestry: time=0.0444792 ancestors=90162
+2020-06-24 16:11:33,418 [11729] DEBUG    msprime.ancestry: time=0.0979881 ancestors=80314
+2020-06-24 16:11:33,438 [11729] DEBUG    msprime.ancestry: time=0.167461 ancestors=70518
+2020-06-24 16:11:33,466 [11729] DEBUG    msprime.ancestry: time=0.258912 ancestors=60734
+2020-06-24 16:11:33,501 [11729] DEBUG    msprime.ancestry: time=0.386571 ancestors=51002
+2020-06-24 16:11:33,542 [11729] DEBUG    msprime.ancestry: time=0.575475 ancestors=41292
+2020-06-24 16:11:33,596 [11729] DEBUG    msprime.ancestry: time=0.872121 ancestors=31704
+2020-06-24 16:11:33,668 [11729] DEBUG    msprime.ancestry: time=1.42071 ancestors=22228
+2020-06-24 16:11:33,763 [11729] DEBUG    msprime.ancestry: time=2.75437 ancestors=13042
+2020-06-24 16:11:33,906 [11729] DEBUG    msprime.ancestry: time=8.80469 ancestors=4752
+2020-06-24 16:11:34,018 [11729] DEBUG    msprime.ancestry: time=277.713 ancestors=416
+2020-06-24 16:11:34,034 [11729] DEBUG    msprime.ancestry: time=6352.95 ancestors=142
+2020-06-24 16:11:34,042 [11729] DEBUG    msprime.ancestry: time=20955.5 ancestors=104
+2020-06-24 16:11:34,050 [11729] DEBUG    msprime.ancestry: time=40321.8 ancestors=83
+2020-06-24 16:11:34,056 [11729] DEBUG    msprime.ancestry: time=72735.7 ancestors=74
+2020-06-24 16:11:34,059 [11729] INFO     msprime.ancestry: Completed at time=235063 nodes=207110 edges=233940
+</pre></div>
+</div>
+<p>In this example we run a reasonably large simulation and turn on
+the DEBUG output. This will then periodically (every 10,000 simulation
+events) print out the current time in the simulation, and the
+number of extant ancestral lineages.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The format of these logging messages is not fixed and may change
+arbitrarily in the future. If you need to obtain the information within
+them, please open an issue on GitHub so that we can provide a documented
+API for this.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="cli.html" title="previous page">Command line interface</a>
+    <a class='right-next' id="next-link" href="api.html" title="next page">API Reference</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tskit Developers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

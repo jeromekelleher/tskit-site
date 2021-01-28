@@ -1,0 +1,709 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demography &#8212; Msprime manual</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Mutations" href="mutations.html" />
+    <link rel="prev" title="Ancestry" href="ancestry.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Msprime manual</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Getting started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="quickstart.html">
+   Quickstart
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="installation.html">
+   Installation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Using msprime
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="simulations.html">
+   Running simulations
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ancestry.html">
+     Ancestry
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Demography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mutations.html">
+     Mutations
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="utilities.html">
+   Utilities
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="likelihoods.html">
+     Computing likelihoods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rate_maps.html">
+     Rate Maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cli.html">
+     Command line interface
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="logging.html">
+     Logging
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="api.html">
+   API Reference
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="development.html">
+   Developer documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="legacy.html">
+   Legacy (version 0.x) APIs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="changelog.html">
+   Changelog
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CITATION.html">
+   Citing msprime
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial.html">
+   PORTING IN PROGRESS: Tutorial
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Manual for msprime __MSPRIME_VERSION__
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/demography.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tskit-dev/msprime"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/tskit-dev/msprime/issues/new?title=Issue%20on%20page%20%2Fdemography.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/tskit-dev/msprime/edit/main/docs/demography.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#old-text">
+   Old text
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#migration-rates">
+   Migration rates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demographic-events">
+   Demographic Events
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#species-trees">
+   Species trees
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="demography">
+<span id="sec-demography"></span><h1>Demography<a class="headerlink" href="#demography" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This documentation is under heavy construction. Please note
+any outstanding TODOs before opening issues.</p>
+</div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>This section needs some intro material</p>
+</div>
+<dl class="simple myst">
+<dt><a class="reference internal" href="api.html#msprime.Demography" title="msprime.Demography"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demography</span></code></a></dt><dd><p>Description of a demographic model</p>
+</dd>
+</dl>
+<p><strong>Constructing simple models</strong></p>
+<dl class="simple myst">
+<dt><a class="reference internal" href="api.html#msprime.Demography.isolated_model" title="msprime.Demography.isolated_model"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Demography.isolated_model()</span></code></a></dt><dd><p>A model of isolated populations</p>
+</dd>
+<dt><a class="reference internal" href="api.html#msprime.Demography.island_model" title="msprime.Demography.island_model"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Demography.island_model()</span></code></a></dt><dd><p>An interconnected web of populations</p>
+</dd>
+<dt><a class="reference internal" href="api.html#msprime.Demography.stepping_stone_model" title="msprime.Demography.stepping_stone_model"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Demography.stepping_stone_model()</span></code></a></dt><dd><p>Simple spatial model</p>
+</dd>
+</dl>
+<p><strong>Constructing models from existing definitions</strong></p>
+<dl class="simple myst">
+<dt><a class="reference internal" href="api.html#msprime.Demography.from_species_tree" title="msprime.Demography.from_species_tree"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Demography.from_species_tree()</span></code></a></dt><dd><p>Parse a newick species tree</p>
+</dd>
+<dt><a class="reference internal" href="api.html#msprime.Demography.from_starbeast" title="msprime.Demography.from_starbeast"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Demography.from_starbeast()</span></code></a></dt><dd><p>Parse StarBeast output</p>
+</dd>
+<dt><a class="reference internal" href="api.html#msprime.Demography.from_old_style" title="msprime.Demography.from_old_style"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Demography.from_old_style()</span></code></a></dt><dd><p>Demography from msprime legacy 0.x inputs</p>
+</dd>
+</dl>
+<p><strong>Debugging</strong></p>
+<dl class="simple myst">
+<dt><a class="reference internal" href="api.html#msprime.Demography.debug" title="msprime.Demography.debug"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Demography.debug()</span></code></a></dt><dd><p>Get a Debugger for a demography</p>
+</dd>
+<dt><a class="reference internal" href="api.html#msprime.DemographyDebugger" title="msprime.DemographyDebugger"><code class="xref py py-class docutils literal notranslate"><span class="pre">DemographyDebugger</span></code></a></dt><dd><p>Debugger for demographic models</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<div class="section" id="old-text">
+<h2>Old text<a class="headerlink" href="#old-text" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>This is the text from the old API docs. Reuse somewhere more appropriate,
+either by having a “summary” section of by moving bits of the text into the
+relevant sections.</p>
+</div>
+<p>Population structure is modelled by specifying a fixed number of subpopulations
+<span class="math notranslate nohighlight">\(d\)</span>, and a <span class="math notranslate nohighlight">\(d \times d\)</span> matrix <span class="math notranslate nohighlight">\(M\)</span> of per-generation
+migration rates. The <span class="math notranslate nohighlight">\((j,k)^{th}\)</span> entry of <span class="math notranslate nohighlight">\(M\)</span> is the expected number
+of migrants moving from population <span class="math notranslate nohighlight">\(k\)</span> to population <span class="math notranslate nohighlight">\(j\)</span> per
+generation, divided by the size of population <span class="math notranslate nohighlight">\(j\)</span>. In terms of the
+coalescent process, <span class="math notranslate nohighlight">\(M_{j,k}\)</span> gives the rate at which an ancestral
+lineage moves from population <span class="math notranslate nohighlight">\(j\)</span> to population <span class="math notranslate nohighlight">\(k\)</span>, as one follows
+it back through time. In continuous-time models, when <span class="math notranslate nohighlight">\(M_{j,k}\)</span> is close
+to zero, this rate is approximately equivalent to the fraction of population <span class="math notranslate nohighlight">\(j\)</span>
+that is replaced each generation by migrants from population <span class="math notranslate nohighlight">\(k\)</span>. In
+discrete-time models, the equivalence is exact and each row of <span class="math notranslate nohighlight">\(M\)</span> has
+the constraint <span class="math notranslate nohighlight">\(\sum_{k \neq j} M_{j,k} \leq 1\)</span>. This differs from the
+migration matrix one usually uses in population demography: if <span class="math notranslate nohighlight">\(m_{k,j}\)</span>
+is the proportion of individuals (in the usual sense; not lineages) in
+population <span class="math notranslate nohighlight">\(k\)</span> that move to population <span class="math notranslate nohighlight">\(j\)</span> per generation, then
+translating this proportion of population <span class="math notranslate nohighlight">\(k\)</span> to a proportion of
+population <span class="math notranslate nohighlight">\(j\)</span>, we have <span class="math notranslate nohighlight">\(M_{j,k} = m_{k,j} \times N_k / N_j\)</span>.</p>
+<p>Each subpopulation has an initial absolute population size <span class="math notranslate nohighlight">\(s\)</span>
+and a per generation exponential growth rate <span class="math notranslate nohighlight">\(\alpha\)</span>. The size of a
+given population at time <span class="math notranslate nohighlight">\(t\)</span> in the past (measured in generations) is
+therefore given by <span class="math notranslate nohighlight">\(s e^{-\alpha t}\)</span>. Demographic events that occur in
+the history of the simulated population alter some aspect of this population
+configuration at a particular time in the past.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>refactor this text here which is drawn from the old api.rst
+page.</p>
+</div>
+<p>Population structure is modelled in <code class="docutils literal notranslate"><span class="pre">msprime</span></code> by specifying a fixed number of
+subpopulations, with the migration rates between those subpopulations defined by a migration
+matrix. Each subpopulation has an <code class="docutils literal notranslate"><span class="pre">initial_size</span></code> that defines its absolute diploid size at
+time zero and a per-generation <code class="docutils literal notranslate"><span class="pre">growth_rate</span></code> which specifies the exponential
+growth rate of the sub-population. We must also define the number of genomes to
+sample from each subpopulation. The number of populations and their initial
+configuration is defined using the <code class="docutils literal notranslate"><span class="pre">population_configurations</span></code> parameter to
+<a class="reference internal" href="legacy.html#msprime.simulate" title="msprime.simulate"><code class="xref py py-func docutils literal notranslate"><span class="pre">simulate()</span></code></a>, which takes a list of <a class="reference internal" href="legacy.html#msprime.PopulationConfiguration" title="msprime.PopulationConfiguration"><code class="xref py py-class docutils literal notranslate"><span class="pre">PopulationConfiguration</span></code></a>
+instances. Population IDs are zero indexed, and correspond to their position in
+the list.</p>
+<p>Samples are drawn sequentially from populations in increasing order of
+population ID. For example, if we specified an overall sample size of 6, and
+specify that 2 samples are drawn from population 0 and 4 from population 1,
+then samples 0 and 1 will be initially located in population 0, and
+samples 2, 3, 4, and 5 will be drawn from population 2.</p>
+<!---
+TODO do something with this text.
+-->
+<!---
+Given :math:`N` populations, migration matrices are specified using an :math:`N
+-->
+<!---
+\times N` matrix of between-subpopulation migration rates. See the
+-->
+<!---
+documentation for :func:`.simulate` and the `Simulation model`_ section for
+-->
+<!---
+more details on the migration rates.
+-->
+</div>
+<div class="section" id="migration-rates">
+<span id="sec-demography-migration"></span><h2>Migration rates<a class="headerlink" href="#migration-rates" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="demographic-events">
+<span id="sec-demography-events"></span><h2>Demographic Events<a class="headerlink" href="#demographic-events" title="Permalink to this headline">¶</a></h2>
+<p>Demographic events change some aspect of the population configuration
+at some time in the past, and are specified using the <code class="docutils literal notranslate"><span class="pre">demographic_events</span></code>
+parameter to <a class="reference internal" href="legacy.html#msprime.simulate" title="msprime.simulate"><code class="xref py py-func docutils literal notranslate"><span class="pre">simulate()</span></code></a>. Each element of this list must be an
+instance of one of the following demographic events
+that are currently supported. Note that all times are measured in
+generations, all sizes are absolute (i.e., <em>not</em> relative to <span class="math notranslate nohighlight">\(N_e\)</span>),
+and all rates are per-generation.</p>
+</div>
+<div class="section" id="species-trees">
+<h2>Species trees<a class="headerlink" href="#species-trees" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Review this documentation which is a combination of the old API and
+tutorial docs.</p>
+</div>
+<p>Species trees hold information about the sequence and the times at which species
+diverged from each other. Viewed backwards in time, divergence events are equivalent
+to mass migration events in which all lineages from one population move to another
+population. The history of a set of populations can thus be modelled according to
+a given species tree. To faciliate the specification of the model,
+<a class="reference internal" href="api.html#msprime.Demography.from_species_tree" title="msprime.Demography.from_species_tree"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Demography.from_species_tree()</span></code></a> parses a species tree and returns
+the corresponding Demography object.</p>
+<p>When species trees are estimated with a program like <a class="reference external" href="https://academic.oup.com/mbe/article/34/8/2101/3738283">StarBEAST</a> they can further
+contain estimates on the population sizes of extant and ancestral species.
+<a class="reference internal" href="api.html#msprime.Demography.from_starbeast" title="msprime.Demography.from_starbeast"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Demography.from_starbeast()</span></code></a> parses species trees estimated with StarBEAST and uses
+these estimates to define the population configurations.</p>
+<p>Note that when the species tree has branch lengths not in units of generations but
+in units of years or millions of years (which is common), a generation time in years
+is required for parsing.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>refactor this content to use the new conventions and jupyter.</p>
+</div>
+<p>Models used in <code class="docutils literal notranslate"><span class="pre">msprime</span></code> for simulation can be designed to approximate the
+diversification history of a group of diverging species, by defining, for each species
+divergence, a mass migration event at which all lineages from one population move
+into another population. To faciliate the specification of these mass migration events
+it is possible to parse a species tree and generate the set of mass migration events
+automatically.</p>
+<p>To be parseable, a species tree must be encoded in
+<a class="reference external" href="https://en.wikipedia.org/wiki/Newick_format">Newick</a> format, with named leaves and
+branch lengths. One example of a parseable species tree in Newick format is
+<code class="docutils literal notranslate"><span class="pre">(((human:5.6,chimpanzee:5.6):3.0,gorilla:8.6):9.4,orangutan:18.0)</span></code>. When visualized
+in a software like <a class="reference external" href="http://tree.bio.ed.ac.uk/software/figtree/">FigTree</a>, this tree
+appears as shown below:</p>
+<a class="reference internal image-reference" href="_images/primates.svg"><img alt="A species tree with branch lengths." src="_images/primates.svg" width="400px" /></a>
+<p>In the above figure, numbers written on branches indicate the lengths of these branches.
+In this case, the units of the branch lengths are millions of years, which is common
+for species trees; however, trees with branch lengths in units of years or generations
+can also be parsed. When the branch lengths are in units of millions of years or in units
+of years (i.e., not in units of generations), a generation time in number of years must
+be provided so that the simulation model can be set up. In addition, a population size
+is required. With the species tree, a generation time, and the population size, the model
+can be generated:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">msprime</span>
+<span class="n">pop_configs</span><span class="p">,</span> <span class="n">demographic_events</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">parse_species_tree</span><span class="p">(</span>
+        <span class="n">tree</span><span class="o">=</span><span class="s2">&quot;(((human:5.6,chimpanzee:5.6):3.0,gorilla:8.6):9.4,orangutan:18.0)&quot;</span><span class="p">,</span>
+        <span class="n">Ne</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
+        <span class="n">branch_length_units</span><span class="o">=</span><span class="s2">&quot;myr&quot;</span><span class="p">,</span>
+        <span class="n">generation_time</span><span class="o">=</span><span class="mi">28</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">parse_species_tree()</span></code> method returns a tuple of two lists:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">pop_configs</span><span class="p">))</span>
+<span class="c1"># &lt;class &#39;list&#39;&gt;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">demographic_events</span><span class="p">))</span>
+<span class="c1"># &lt;class &#39;list&#39;&gt;</span>
+</pre></div>
+</div>
+<p>The first of these two lists contains instances of <a class="reference internal" href="legacy.html#msprime.PopulationConfiguration" title="msprime.PopulationConfiguration"><code class="xref py py-class docutils literal notranslate"><span class="pre">PopulationConfiguration</span></code></a> and
+the second contains instances of <a class="reference internal" href="api.html#msprime.MassMigration" title="msprime.MassMigration"><code class="xref py py-class docutils literal notranslate"><span class="pre">MassMigration</span></code></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">pop_configs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="c1"># &lt;class &#39;msprime.simulations.PopulationConfiguration&#39;&gt;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">demographic_events</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="c1"># &lt;class &#39;msprime.simulations.MassMigration&#39;&gt;</span>
+</pre></div>
+</div>
+<p>The mass migration events are ordered by the time of the event and they thus specify
+the sequence in which lineages are moved from source to destination populations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">demographic_events</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="c1"># Mass migration: Lineages moved with probability 1.0 backwards in time with source 1 &amp; dest 0</span>
+                     <span class="p">(</span><span class="n">equivalent</span> <span class="n">to</span> <span class="n">migration</span> <span class="kn">from</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">1</span> <span class="n">forwards</span> <span class="ow">in</span> <span class="n">time</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">demographic_events</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1"># Mass migration: Lineages moved with probability 1.0 backwards in time with source 2 &amp; dest 0</span>
+                     <span class="p">(</span><span class="n">equivalent</span> <span class="n">to</span> <span class="n">migration</span> <span class="kn">from</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">2</span> <span class="n">forwards</span> <span class="ow">in</span> <span class="n">time</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">demographic_events</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="c1"># Mass migration: Lineages moved with probability 1.0 backwards in time with source 3 &amp; dest 0</span>
+                     <span class="p">(</span><span class="n">equivalent</span> <span class="n">to</span> <span class="n">migration</span> <span class="kn">from</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">3</span> <span class="n">forwards</span> <span class="ow">in</span> <span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above output indicates that — viewed backwards in time — lineages from
+populations 1, 2, and 3 are consecutively moved into population 0. Viewed forwards in
+time instead, this means that population 3 is the first to diverge, followed by
+population 2 and finally the divergence between populations 0 and 1. This
+sequence of divergences corresponds to the species tree if population 3 is orangutan
+and populations 2, 1, and 0 are gorilla, chimpanzee, and human, respectively. While
+the parsed species names are not used as population labels, they are included in the
+population configurations in the form of metadata, with the “species_name” tag:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="n">pop_config</span><span class="o">.</span><span class="n">metadata</span> <span class="k">for</span> <span class="n">pop_config</span> <span class="ow">in</span> <span class="n">pop_configs</span><span class="p">])</span>
+<span class="c1"># [{&#39;species_name&#39;: &#39;human&#39;}, {&#39;species_name&#39;: &#39;chimpanzee&#39;}, {&#39;species_name&#39;: &#39;gorilla&#39;}, {&#39;species_name&#39;: &#39;orangutan&#39;}]</span>
+</pre></div>
+</div>
+<p>As the above output shows, the information on the topology of the species tree is
+fully included in the set of population configurations and mass migration events.
+It also illustrates that it is always the left one (when viewed from the root
+towards the tips of the species tree in the tree figure above) of the two populations
+descending from a divergence event that is used as the destination population in
+mass migration events.</p>
+<p>The population configurations also define the population size:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="n">pop_config</span><span class="o">.</span><span class="n">initial_size</span> <span class="k">for</span> <span class="n">pop_config</span> <span class="ow">in</span> <span class="n">pop_configs</span><span class="p">])</span>
+<span class="c1"># [10000.0, 10000.0, 10000.0, 10000.0]</span>
+</pre></div>
+</div>
+<p>The population size is 10,000 because this value was specified for Ne when
+calling <code class="xref py py-func docutils literal notranslate"><span class="pre">parse_species_tree()</span></code>. The growth rates are zero for all populations,
+meaning that they all have constant population sizes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="n">pop_config</span><span class="o">.</span><span class="n">growth_rate</span> <span class="k">for</span> <span class="n">pop_config</span> <span class="ow">in</span> <span class="n">pop_configs</span><span class="p">])</span>
+<span class="c1"># [0.0, 0.0, 0.0, 0.0]</span>
+</pre></div>
+</div>
+<p>To simulate under the model corresponding to the species tree, the population
+configurations and mass migration events are used as input for
+<a class="reference internal" href="legacy.html#msprime.simulate" title="msprime.simulate"><code class="xref py py-func docutils literal notranslate"><span class="pre">simulate()</span></code></a>. We can specify the genomes to sample either by using the
+<code class="docutils literal notranslate"><span class="pre">samples</span></code> parameter or by setting a sample size for each population:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pop_config</span> <span class="ow">in</span> <span class="n">pop_configs</span><span class="p">:</span>
+    <span class="n">pop_config</span><span class="o">.</span><span class="n">sample_size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1"># pop_configs now has 2 genomes sampled from each population at time 0. Equivalent to</span>
+<span class="c1"># msprime.simulate(samples=[(0,0), (0,0), (1,0), (1,0), (2,0), (2,0), (3,0), (3,0)], ...)</span>
+<span class="n">tree_sequence</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span>
+        <span class="n">population_configurations</span><span class="o">=</span><span class="n">pop_configs</span><span class="p">,</span>
+        <span class="n">demographic_events</span><span class="o">=</span><span class="n">demographic_events</span><span class="p">)</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">tree_sequence</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;unicode&quot;</span><span class="p">))</span>
+<span class="c1">#    14</span>
+<span class="c1">#  ┏━━┻━━━┓</span>
+<span class="c1">#  ┃     13</span>
+<span class="c1">#  ┃   ┏━━┻━━┓</span>
+<span class="c1">#  ┃   ┃    12</span>
+<span class="c1">#  ┃   ┃   ┏━┻━┓</span>
+<span class="c1">#  ┃   ┃   ┃  11</span>
+<span class="c1">#  ┃   ┃   ┃  ┏┻┓</span>
+<span class="c1"># 10   ┃   ┃  ┃ ┃</span>
+<span class="c1"># ┏┻┓  ┃   ┃  ┃ ┃</span>
+<span class="c1"># ┃ ┃  ┃   9  ┃ ┃</span>
+<span class="c1"># ┃ ┃  ┃  ┏┻┓ ┃ ┃</span>
+<span class="c1"># ┃ ┃  8  ┃ ┃ ┃ ┃</span>
+<span class="c1"># ┃ ┃ ┏┻┓ ┃ ┃ ┃ ┃</span>
+<span class="c1"># 6 7 4 5 2 3 0 1</span>
+</pre></div>
+</div>
+<p>The correspondence between the model and the species tree can also be verified
+by using the demography debugger:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dd</span> <span class="o">=</span> <span class="n">msprime</span><span class="o">.</span><span class="n">DemographyDebugger</span><span class="p">(</span>
+    <span class="n">population_configurations</span><span class="o">=</span><span class="n">pop_configs</span><span class="p">,</span>
+    <span class="n">demographic_events</span><span class="o">=</span><span class="n">demographic_events</span><span class="p">)</span>
+<span class="n">dd</span><span class="o">.</span><span class="n">print_history</span><span class="p">()</span>
+<span class="c1"># Model =  hudson(reference_size=1)</span>
+<span class="c1"># ================================</span>
+<span class="c1"># Epoch: 0 -- 200000.0 generations</span>
+<span class="c1"># ================================</span>
+<span class="c1">#      start     end      growth_rate |     0        1        2        3</span>
+<span class="c1">#    -------- --------       -------- | -------- -------- -------- --------</span>
+<span class="c1"># 0 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1"># 1 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1"># 2 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1"># 3 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1">#</span>
+<span class="c1"># Events @ generation 200000.0</span>
+<span class="c1">#    - Mass migration: Lineages moved with probability 1.0 backwards in time with source 1 &amp; dest 0</span>
+<span class="c1">#                      (equivalent to migration from 0 to 1 forwards in time)</span>
+<span class="c1"># =================================================</span>
+<span class="c1"># Epoch: 200000.0 -- 307142.85714285716 generations</span>
+<span class="c1"># =================================================</span>
+<span class="c1">#      start     end      growth_rate |     0        1        2        3</span>
+<span class="c1">#    -------- --------       -------- | -------- -------- -------- --------</span>
+<span class="c1"># 0 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1"># 1 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1"># 2 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1"># 3 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1">#</span>
+<span class="c1"># Events @ generation 307142.85714285716</span>
+<span class="c1">#    - Mass migration: Lineages moved with probability 1.0 backwards in time with source 2 &amp; dest 0</span>
+<span class="c1">#                      (equivalent to migration from 0 to 2 forwards in time)</span>
+<span class="c1"># =========================================================</span>
+<span class="c1"># Epoch: 307142.85714285716 -- 642857.142857143 generations</span>
+<span class="c1"># =========================================================</span>
+<span class="c1">#      start     end      growth_rate |     0        1        2        3</span>
+<span class="c1">#    -------- --------       -------- | -------- -------- -------- --------</span>
+<span class="c1"># 0 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1"># 1 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1"># 2 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1"># 3 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1">#</span>
+<span class="c1"># Events @ generation 642857.142857143</span>
+<span class="c1">#    - Mass migration: Lineages moved with probability 1.0 backwards in time with source 3 &amp; dest 0</span>
+<span class="c1">#                      (equivalent to migration from 0 to 3 forwards in time)</span>
+<span class="c1"># ==========================================</span>
+<span class="c1"># Epoch: 642857.142857143 -- inf generations</span>
+<span class="c1"># ==========================================</span>
+<span class="c1">#      start     end      growth_rate |     0        1        2        3</span>
+<span class="c1">#    -------- --------       -------- | -------- -------- -------- --------</span>
+<span class="c1"># 0 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1"># 1 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1"># 2 |  1e+04    1e+04               0 |     0        0        0        0</span>
+<span class="c1"># 3 |  1e+04    1e+04               0 |     0        0        0        0</span>
+</pre></div>
+</div>
+<p>The epoch boundaries 200000, 307142.9, and 642857.1 correspond to the species
+divergence times 5.6, 8.6, and 18.0 after converting the branch length units
+of the species tree from millions of years to generations with the specified
+generation time of 28 years.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="ancestry.html" title="previous page">Ancestry</a>
+    <a class='right-next' id="next-link" href="mutations.html" title="next page">Mutations</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tskit Developers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

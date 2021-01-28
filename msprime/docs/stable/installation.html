@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Installation &mdash; msprime 0.7.5 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> msprime
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conda">conda</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quick-start">Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#full-example">Full example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pip">pip</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-system-requirements">Installing system requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#platform-specific-installation">Platform specific installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#debian-ubuntu">Debian/Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#freebsd-10-0">FreeBSD 10.0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#os-x-homebrew">OS X Homebrew</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#python-2-users">Python 2 users</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CITATION.html">Citing msprime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">msprime</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<span id="sec-installation"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>There are two basic options for installing <code class="docutils literal notranslate"><span class="pre">msprime</span></code>: either through
+pre-built binary packages using <a class="reference internal" href="#sec-installation-conda"><span class="std std-ref">conda</span></a> or
+by compiling locally using <a class="reference internal" href="#sec-installation-pip"><span class="std std-ref">pip</span></a>. We recommend using <code class="docutils literal notranslate"><span class="pre">conda</span></code>
+for most users, although <code class="docutils literal notranslate"><span class="pre">pip</span></code> can be more convenient in certain cases.</p>
+<div class="section" id="requirements">
+<span id="sec-installation-requirements"></span><h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>Msprime requires Python 3.4+
+and the <a class="reference external" href="http://www.gnu.org/software/gsl/">GNU Scientific Library</a>.
+GSL can either be installed automatically as part of a
+<a class="reference internal" href="#sec-installation-conda"><span class="std std-ref">conda</span></a> installation <strong>or</strong> via system packages
+(see <a class="reference internal" href="#sec-pip-platform-specific-installation"><span class="std std-ref">Platform specific installation</span></a>)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you installed Python using anaconda/miniconda, please install
+msprime using <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Link/load time errors will occur if you mix
+a conda installed Python with system libraries.</p>
+</div>
+</div>
+<div class="section" id="conda">
+<span id="sec-installation-conda"></span><h2>conda<a class="headerlink" href="#conda" title="Permalink to this headline">¶</a></h2>
+<p>Pre-built binary packages for <code class="docutils literal notranslate"><span class="pre">msprime</span></code> are available through
+<a class="reference external" href="https://conda.io/docs/">conda</a>, and built using <a class="reference external" href="https://conda-forge.org/">conda-forge</a>.
+Packages for Python 3.6 and 3.7 are available for Linux, OSX and Windows.</p>
+<div class="section" id="quick-start">
+<h3>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">conda</span></code> using <a class="reference external" href="https://conda.io/miniconda.html">miniconda</a>.
+Make sure you follow the instructions to fully activate your <code class="docutils literal notranslate"><span class="pre">conda</span></code>
+installation!</p></li>
+<li><p>Set up the <a class="reference external" href="https://conda-forge.org/">conda-forge channel</a> using
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--add</span> <span class="pre">channels</span> <span class="pre">conda-forge</span></code>.</p></li>
+<li><p>Install msprime: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">msprime</span></code>.</p></li>
+<li><p>Try it out: <code class="docutils literal notranslate"><span class="pre">msp</span> <span class="pre">--version</span></code>.</p></li>
+</ol>
+<p>There are several different ways to obtain <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Please see the
+<a class="reference external" href="https://docs.anaconda.com/anaconda/install/">anaconda installation documentation</a>
+for full details.</p>
+</div>
+<div class="section" id="full-example">
+<h3>Full example<a class="headerlink" href="#full-example" title="Permalink to this headline">¶</a></h3>
+<p>In this example we create a
+<a class="reference external" href="https://conda.io/docs/user-guide/tasks/manage-environments.html">conda environment</a>
+and install <code class="docutils literal notranslate"><span class="pre">msprime</span></code> into it on an OSX machine.
+We assume that <code class="docutils literal notranslate"><span class="pre">conda</span></code> has been installed  and bash shell is being used (Windows users will need to modify the
+commands slightly).</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda create --name msprime-env
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /Users/jk/miniconda3/envs/msprime-env
+
+
+Proceed ([y]/n)? y
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate msprime-env
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+$ source activate msprime-env
+(msprime-env) $ conda install -c conda-forge msprime
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /Users/jk/miniconda3/envs/msprime-env
+
+  added / updated specs:
+    - msprime
+
+
+The following NEW packages will be INSTALLED:
+
+    ca-certificates: 2018.1.18-0           conda-forge
+    certifi:         2018.1.18-py36_0      conda-forge
+    gsl:             1.16-0                conda-forge
+    hdf5:            1.10.1-2              conda-forge
+    intel-openmp:    2018.0.0-h8158457_8
+    libgfortran:     3.0.1-h93005f0_2
+    mkl:             2018.0.1-hfbd8650_4
+    msprime:         0.5.0b2-py36_3        conda-forge
+    ncurses:         5.9-10                conda-forge
+    numpy:           1.14.1-py36h8a80b8c_1
+    openssl:         1.0.2n-0              conda-forge
+    pip:             9.0.1-py36_1          conda-forge
+    pyparsing:       2.2.0-py36_0          conda-forge
+    python:          3.6.4-0               conda-forge
+    readline:        7.0-0                 conda-forge
+    setuptools:      38.5.1-py36_0         conda-forge
+    six:             1.11.0-py36_1         conda-forge
+    sqlite:          3.20.1-2              conda-forge
+    svgwrite:        1.1.12-py_0           conda-forge
+    tk:              8.6.7-0               conda-forge
+    wheel:           0.30.0-py36_2         conda-forge
+    xz:              5.2.3-0               conda-forge
+    zlib:            1.2.11-0              conda-forge
+
+Proceed ([y]/n)? y
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(msprime-env) $ python
+Python 3.6.4 | packaged by conda-forge | (default, Dec 23 2017, 16:54:01)
+[GCC 4.2.1 Compatible Apple LLVM 6.1.0 (clang-602.0.53)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import msprime
+&gt;&gt;&gt; tree = msprime.simulate(5).first()
+&gt;&gt;&gt; print(tree.draw(format=&quot;unicode&quot;))
+  8
+┏━┻━━┓
+┃    7
+┃  ┏━┻━┓
+┃  ┃   6
+┃  ┃  ┏┻┓
+┃  5  ┃ ┃
+┃ ┏┻┓ ┃ ┃
+1 0 4 2 3
+</pre></div>
+</div>
+<p>Please see the <a class="reference external" href="https://conda.io/docs/index.html">conda documentation</a> for
+more details on managing packages and environments.</p>
+</div>
+</div>
+<div class="section" id="pip">
+<span id="sec-installation-pip"></span><h2>pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h2>
+<p>Installing using <code class="docutils literal notranslate"><span class="pre">pip</span></code> is more flexible than <code class="docutils literal notranslate"><span class="pre">conda</span></code> as it
+can support more versions of Python, and the locations of the
+various dependencies can be specified.</p>
+<p>Installing via <code class="docutils literal notranslate"><span class="pre">pip</span></code> is the recommended method when using the
+system provided Python installations.</p>
+<div class="section" id="installing-system-requirements">
+<span id="sec-installation-system-requirements"></span><h3>Installing system requirements<a class="headerlink" href="#installing-system-requirements" title="Permalink to this headline">¶</a></h3>
+<p>When installing via <code class="docutils literal notranslate"><span class="pre">pip</span></code>, GSL must be installed using system packages
+(we do not recommend installing GSL from source). GSL packages are available
+on all major platforms.</p>
+<p>For example, to install on Debian/Ubuntu use (as root):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ apt-get install python-dev libgsl0-dev
+</pre></div>
+</div>
+<p>For Redhat/Fedora use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ yum install gsl-devel
+</pre></div>
+</div>
+<p>On FreeBSD we can use <code class="docutils literal notranslate"><span class="pre">pkg</span></code> to install the requirements:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pkg install gsl
+</pre></div>
+</div>
+<p>To install the dependencies on OS X, we can use <a class="reference external" href="http://brew.sh/">Homebrew</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew update
+$ brew install gsl
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Installation<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>We can install <code class="docutils literal notranslate"><span class="pre">msprime</span></code> easily using pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 -m pip install msprime
+</pre></div>
+</div>
+<p>(It is generally better to use <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span></code> rather than call <code class="docutils literal notranslate"><span class="pre">pip</span></code>
+directly since this allows you to control which installation of Python the
+package is installed to.) This will work in most cases, once the GSL has been
+installed. See below for platform specific build instructions when this fails.</p>
+<p>If you do not have root access to your machine, you can install
+<code class="docutils literal notranslate"><span class="pre">msprime</span></code> into your local Python installation as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 -m pip install msprime --user
+</pre></div>
+</div>
+<p>To use the <code class="docutils literal notranslate"><span class="pre">mspms</span></code> program you must ensure
+that the <code class="docutils literal notranslate"><span class="pre">~/.local/bin</span></code> directory is in your <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, or
+simply run it using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ~/.local/bin/mspms
+</pre></div>
+</div>
+<p>To uninstall <code class="docutils literal notranslate"><span class="pre">msprime</span></code>, simply run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 -m pip uninstall msprime
+</pre></div>
+</div>
+</div>
+<div class="section" id="platform-specific-installation">
+<span id="sec-pip-platform-specific-installation"></span><h3>Platform specific installation<a class="headerlink" href="#platform-specific-installation" title="Permalink to this headline">¶</a></h3>
+<p>This section contains instructions to build on platforms
+that require build time flags for GSL.</p>
+<div class="section" id="debian-ubuntu">
+<h4>Debian/Ubuntu<a class="headerlink" href="#debian-ubuntu" title="Permalink to this headline">¶</a></h4>
+<p>To install and run <code class="docutils literal notranslate"><span class="pre">msprime</span></code> on a fresh Ubuntu 15.10 installation, do the
+following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install pkg-config python-dev python-pip libgsl0-dev
+$ pip install msprime --user
+$ ~/.local/bin/mspms <span class="m">2</span> <span class="m">1</span> -t <span class="m">1</span>
+/usr/local/bin/mspms <span class="m">2</span> <span class="m">1</span> -t <span class="m">1</span>
+<span class="m">5338</span> <span class="m">8035</span> <span class="m">23205</span>
+
+//
+segsites: <span class="m">3</span>
+positions: <span class="m">0</span>.014 <span class="m">0</span>.045 <span class="m">0</span>.573
+<span class="m">100</span>
+<span class="m">011</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="freebsd-10-0">
+<h4>FreeBSD 10.0<a class="headerlink" href="#freebsd-10-0" title="Permalink to this headline">¶</a></h4>
+<p>Install the prerequisitites, and build <code class="docutils literal notranslate"><span class="pre">msprime</span></code> as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pkg install gsl
+$ CFLAGS=-I/usr/local/include LDFLAGS=-L/usr/local/lib pip install msprime
+</pre></div>
+</div>
+<p>This assumes that root is logged in using a bash shell. For other shells,
+different methods are need to set the <code class="docutils literal notranslate"><span class="pre">CFLAGS</span></code> and <code class="docutils literal notranslate"><span class="pre">LDFLAGS</span></code> environment
+variables.</p>
+</div>
+<div class="section" id="os-x-homebrew">
+<h4>OS X Homebrew<a class="headerlink" href="#os-x-homebrew" title="Permalink to this headline">¶</a></h4>
+<p>We recommend using <a class="reference internal" href="#sec-installation-conda"><span class="std std-ref">conda</span></a> to install <code class="docutils literal notranslate"><span class="pre">msprime</span></code> on OS X.
+However, it is also possible to install using Homebrew to satisfy the
+GSL dependency.</p>
+<p>First, ensure that Homebrew is installed and up-to-date:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew update
+</pre></div>
+</div>
+<p>We need to ensure that the version of Python we used is installed via Homebrew
+(there can be linking issues if we use the built-in version of
+Python or a version from Anaconda). Therefore, we install Python 3 using
+homebrew:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install python3
+$ pip3 install --upgrade pip setuptools
+</pre></div>
+</div>
+<p>The previous step can be skipped if you wish to use your own Python installation,
+and already have a working pip.</p>
+<p>Now install the dependencies and msprime:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install gsl
+$ pip3 install msprime
+</pre></div>
+</div>
+<p>Check if it works:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mspms 10 1 -T
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="python-2-users">
+<h2>Python 2 users<a class="headerlink" href="#python-2-users" title="Permalink to this headline">¶</a></h2>
+<p>Msprime no longer supports Python 2, and therefore those wishing to continue
+using Python 2.7 will not be able to take advantage of newer features. We
+recommend using msprime version 0.6.2 if you need to work with Python 2.7:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m pip install msprime==0.6.2
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda install msprime==0.6.2
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2015-2019, Jerome Kelleher.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
